@@ -1,0 +1,209 @@
+# infrastructure/kubernetes/monitoring/prometheus.yaml
+# Déploiement Prometheus + Grafana pour le monitoring de l'API
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: prometheus-config
+  namespace: mlops
+data:
+  prometheus.yml: |
+    global:
+      scrape_interval:     15s
+      evaluation_interval: 15s
+      external_labels:
+        cluster: movielens-mlops
+
+    rule_files:
+      - /etc/prometheus/rules/*.yml
+
+    alerting:
+      alertmanagers:
+        - static_configs:
+            - targets: [alertmanager:9093]
+
+    scrape_configs:
+      # ── API FastAPI ─────────────────────────────────────────────
+      - job_name: movielens-api
+        static_configs:
+          - targets: [movielens-api:80]
+        metrics_path: /metrics/prometheus
+        scrape_interval: 15s
+
+      # ── MLflow ──────────────────────────────────────────────────
+      - job_name: mlflow
+        static_configs:
+          - targets: [mlflow:5000]
+        metrics_path: /metrics
+
+      # ── Auto-discovery Kubernetes ────────────────────────────────
+      - job_name: kubernetes-pods
+        kubernetes_sd_configs:
+          - role: pod
+        relabel_configs:
+          - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_scrape]
+            action: keep
+            regex: "true"
+          - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_path]
+            action: replace
+            target_label: __metrics_path__
+            regex: (.+)
+
+  # ── Règles d'alerte ─────────────────────────────────────────────
+  api_alerts.yml: |
+    groups:
+      - name: movielens_api
+        rules:
+          - alert: APIHighLatency
+            expr: api_latency_ms_p99 > 500
+            for: 5m
+            labels:
+              severity: warning
+            annotations:
+              summary: "Latence P99 élevée ({{ $value }}ms > 500ms)"
+              description: "L'API répond lentement depuis 5 minutes"
+
+          - alert: APIErrorRate
+            expr: rate(api_requests_total{status=~"5.."}[5m]) > 0.05
+            for: 2m
+            labels:
+              severity: critical
+            annotations:
+              summary: "Taux d'erreurs 5xx élevé ({{ $value | humanizePercentage }})"
+
+          - alert: APIDown
+            expr: up{job="movielens-api"} == 0
+            for: 1m
+            labels:
+              severity: critical
+            annotations:
+              summary: "API MovieLens hors service"
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prometheus
+  namespace: mlops
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prometheus
+  template:
+    metadata:
+      labels:
+        app: prometheus
+    spec:
+      containers:
+        - name: prometheus
+          image: prom/prometheus:v2.50.0
+          ports:
+            - containerPort: 9090
+          args:
+            - --config.file=/etc/prometheus/prometheus.yml
+            - --storage.tsdb.path=/prometheus
+            - --storage.tsdb.retention.time=15d
+            - --web.enable-lifecycle
+          volumeMounts:
+            - name: config
+              mountPath: /etc/prometheus
+            - name: storage
+              mountPath: /prometheus
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "512Mi"
+            limits:
+              cpu: "500m"
+              memory: "1Gi"
+      volumes:
+        - name: config
+          configMap:
+            name: prometheus-config
+        - name: storage
+          emptyDir: {}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: prometheus
+  namespace: mlops
+spec:
+  selector:
+    app: prometheus
+  ports:
+    - port: 9090
+      targetPort: 9090
+  type: ClusterIP
+
+---
+# Grafana avec datasource Prometheus préconfigurée
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grafana
+  namespace: mlops
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: grafana
+  template:
+    metadata:
+      labels:
+        app: grafana
+    spec:
+      containers:
+        - name: grafana
+          image: grafana/grafana:10.3.0
+          ports:
+            - containerPort: 3000
+          env:
+            - name: GF_SECURITY_ADMIN_PASSWORD
+              value: "mlops_grafana"
+            - name: GF_USERS_ALLOW_SIGN_UP
+              value: "false"
+          volumeMounts:
+            - name: grafana-datasource
+              mountPath: /etc/grafana/provisioning/datasources
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "256Mi"
+      volumes:
+        - name: grafana-datasource
+          configMap:
+            name: grafana-datasource
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-datasource
+  namespace: mlops
+data:
+  prometheus.yaml: |
+    apiVersion: 1
+    datasources:
+      - name: Prometheus
+        type: prometheus
+        url: http://prometheus:9090
+        isDefault: true
+        editable: false
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: grafana
+  namespace: mlops
+spec:
+  selector:
+    app: grafana
+  ports:
+    - port: 3000
+      targetPort: 3000
+  type: ClusterIP

@@ -267,3 +267,38 @@ volumes:
     command: scheduler
     profiles:
       - airflow
+
+  # ── 9. FastAPI — API de recommandation ──────────────────────────
+  fastapi:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/fastapi/Dockerfile
+    container_name: mlops_fastapi
+    restart: unless-stopped
+    depends_on:
+      mlflow:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      MLFLOW_TRACKING_URI: http://mlflow:5000
+      MODEL_NAME:          naive-bayes-recommender
+      MODEL_STAGE:         Production
+      FEAST_REDIS_HOST:    redis
+      FEAST_REDIS_PORT:    "6379"
+      AWS_ACCESS_KEY_ID:   minioadmin
+      AWS_SECRET_ACCESS_KEY: minioadmin
+      MINIO_ENDPOINT:      http://minio:9000
+      LOG_LEVEL:           info
+      PORT:                "8000"
+    volumes:
+      - ./models:/app/models:ro
+      - ./data:/app/data:ro
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 15s
+      timeout:  5s
+      retries:  5
+      start_period: 30s

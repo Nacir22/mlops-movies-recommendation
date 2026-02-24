@@ -1,0 +1,121 @@
+# infrastructure/kubernetes/fastapi/service.yaml
+# Service + HorizontalPodAutoscaler + ConfigMap pour l'API MovieLens
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: movielens-api
+  namespace: mlops
+  labels:
+    app: movielens-api
+spec:
+  selector:
+    app: movielens-api
+  ports:
+    - name:       http
+      port:       80
+      targetPort: 8000
+      protocol:   TCP
+  type: ClusterIP   # Exposé via Ingress
+
+---
+# Ingress — expose l'API à l'extérieur du cluster
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: movielens-api
+  namespace: mlops
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "60"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: api.movielens.local
+      http:
+        paths:
+          - path:     /
+            pathType: Prefix
+            backend:
+              service:
+                name: movielens-api
+                port:
+                  number: 80
+
+---
+# Autoscaling horizontal basé sur CPU
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: movielens-api-hpa
+  namespace: mlops
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind:       Deployment
+    name:       movielens-api
+  minReplicas: 2
+  maxReplicas: 8
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type:               Utilization
+          averageUtilization: 70
+    - type: Resource
+      resource:
+        name: memory
+        target:
+          type:               Utilization
+          averageUtilization: 80
+
+---
+# ConfigMap — variables partagées entre les pods
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mlops-config
+  namespace: mlops
+data:
+  mlflow_tracking_uri: "http://mlflow.mlops.svc.cluster.local:5000"
+  redis_host:          "redis.mlops.svc.cluster.local"
+  minio_endpoint:      "http://minio.mlops.svc.cluster.local:9000"
+  model_name:          "naive-bayes-recommender"
+  model_stage:         "Production"
+
+---
+# Secret MinIO (en prod : géré via Vault ou Sealed Secrets)
+apiVersion: v1
+kind: Secret
+metadata:
+  name: minio-credentials
+  namespace: mlops
+type: Opaque
+stringData:
+  access_key: minioadmin
+  secret_key: minioadmin
+
+---
+# ServiceAccount
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: movielens-api-sa
+  namespace: mlops
+
+---
+# PersistentVolumeClaim pour les modèles partagés
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: models-pvc
+  namespace: mlops
+spec:
+  accessModes:
+    - ReadOnlyMany
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: standard

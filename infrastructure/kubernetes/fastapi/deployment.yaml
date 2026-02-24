@@ -1,0 +1,129 @@
+# infrastructure/kubernetes/fastapi/deployment.yaml
+# Déploiement Kubernetes de l'API FastAPI MovieLens
+#
+# Usage :
+#   kubectl apply -f infrastructure/kubernetes/fastapi/
+#   kubectl rollout status deployment/movielens-api
+#   kubectl get pods -l app=movielens-api
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: movielens-api
+  namespace: mlops
+  labels:
+    app:        movielens-api
+    component:  serving
+    version:    "1.0.0"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: movielens-api
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge:       1    # +1 pod pendant la mise à jour
+      maxUnavailable: 0    # Zéro downtime
+  template:
+    metadata:
+      labels:
+        app:       movielens-api
+        component: serving
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port:   "8000"
+        prometheus.io/path:   "/metrics/prometheus"
+    spec:
+      serviceAccountName: movielens-api-sa
+
+      containers:
+        - name: api
+          image: movielens-api:1.0.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8000
+              protocol: TCP
+
+          # ── Variables d'environnement ─────────────────────────
+          env:
+            - name: MLFLOW_TRACKING_URI
+              valueFrom:
+                configMapKeyRef:
+                  name: mlops-config
+                  key:  mlflow_tracking_uri
+            - name: MODEL_NAME
+              value: naive-bayes-recommender
+            - name: MODEL_STAGE
+              value: Production
+            - name: FEAST_REDIS_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: mlops-config
+                  key:  redis_host
+            - name: LOG_LEVEL
+              value: info
+            - name: PORT
+              value: "8000"
+            # Clés MinIO depuis Secret
+            - name: AWS_ACCESS_KEY_ID
+              valueFrom:
+                secretKeyRef:
+                  name: minio-credentials
+                  key:  access_key
+            - name: AWS_SECRET_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: minio-credentials
+                  key:  secret_key
+
+          # ── Probes ─────────────────────────────────────────────
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 30
+            periodSeconds:       15
+            failureThreshold:    3
+
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 15
+            periodSeconds:       10
+            failureThreshold:    2
+
+          # ── Ressources ─────────────────────────────────────────
+          resources:
+            requests:
+              cpu:    "250m"
+              memory: "512Mi"
+            limits:
+              cpu:    "1000m"
+              memory: "1Gi"
+
+          # ── Volume modèle (optionnel : override pickle local) ──
+          volumeMounts:
+            - name:      models-volume
+              mountPath: /app/models
+              readOnly:  true
+
+      volumes:
+        - name: models-volume
+          persistentVolumeClaim:
+            claimName: models-pvc
+
+      # Distribuer les pods sur plusieurs nœuds
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values: [movielens-api]
+                topologyKey: kubernetes.io/hostname
