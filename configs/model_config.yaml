@@ -1,0 +1,55 @@
+# configs/model_config.yaml
+# Hyperparamètres et configuration du modèle Naïve Bayes
+
+model:
+  name:    "naive-bayes-recommender"
+  version: "1.0.0"
+  type:    "HybridNaiveBayes"
+
+hyperparameters:
+  # GaussianNB — features continues
+  gaussian_var_smoothing: 1.0e-2   # Lissage variance (plus grand = plus lisse)
+
+  # BernoulliNB — features binaires (genres)
+  bernoulli_alpha: 1.0             # Lissage de Laplace (1.0 = lissage standard)
+
+  # Fusion des deux modèles
+  gaussian_weight:  0.6            # Poids des features continues
+  bernoulli_weight: 0.4            # Poids des genres
+
+data:
+  rating_threshold: 4              # Note >= 4 → "aimé"
+  test_size:        0.2
+  random_state:     42
+  extra_stats:      true           # Inclure les stats agrégées user/film
+
+features:
+  continuous:
+    - Gender_enc
+    - Age
+    - Occupation
+    - Year
+    - user_avg_rating
+    - user_n_ratings
+    - user_std_rating
+    - movie_avg_rating
+    - movie_n_ratings
+  binary_genres:   # Générés automatiquement depuis movies.dat
+    - Action
+    - Adventure
+    - Animation
+    - "Children's"
+    - Comedy
+    - Crime
+    - Documentary
+    - Drama
+    - Fantasy
+    - Film-Noir
+    - Horror
+    - Musical
+    - Mystery
+    - Romance
+    - Sci-Fi
+    - Thriller
+    - War
+    - Western

@@ -1,0 +1,4002 @@
+{
+  "1": {
+    "gender_enc": 0.0,
+    "age": 1.0,
+    "occupation": 20.0,
+    "user_avg_rating": 3.693548387096774,
+    "user_n_ratings": 62.0,
+    "user_std_rating": 1.2225840636546323
+  },
+  "2": {
+    "gender_enc": 0.0,
+    "age": 56.0,
+    "occupation": 12.0,
+    "user_avg_rating": 3.8947368421052633,
+    "user_n_ratings": 57.0,
+    "user_std_rating": 1.1905012528690204
+  },
+  "3": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 20.0,
+    "user_avg_rating": 3.542372881355932,
+    "user_n_ratings": 59.0,
+    "user_std_rating": 1.0878963233168786
+  },
+  "4": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 7.0,
+    "user_avg_rating": 3.615384615384616,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.207946445578038
+  },
+  "5": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 13.0,
+    "user_avg_rating": 3.806451612903226,
+    "user_n_ratings": 62.0,
+    "user_std_rating": 1.0990116226867823
+  },
+  "6": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 7.0,
+    "user_avg_rating": 3.763636363636364,
+    "user_n_ratings": 55.0,
+    "user_std_rating": 1.1049323150652353
+  },
+  "7": {
+    "gender_enc": 1.0,
+    "age": 25.0,
+    "occupation": 13.0,
+    "user_avg_rating": 3.871428571428571,
+    "user_n_ratings": 70.0,
+    "user_std_rating": 1.1283106337034872
+  },
+  "8": {
+    "gender_enc": 1.0,
+    "age": 35.0,
+    "occupation": 6.0,
+    "user_avg_rating": 3.647058823529412,
+    "user_n_ratings": 68.0,
+    "user_std_rating": 0.9737557063209568
+  },
+  "9": {
+    "gender_enc": 0.0,
+    "age": 18.0,
+    "occupation": 11.0,
+    "user_avg_rating": 3.75,
+    "user_n_ratings": 60.0,
+    "user_std_rating": 1.0989208882554138
+  },
+  "10": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 10.0,
+    "user_avg_rating": 3.824324324324324,
+    "user_n_ratings": 74.0,
+    "user_std_rating": 1.1628744276441525
+  },
+  "11": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 10.0,
+    "user_avg_rating": 3.6417910447761193,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.251683624191874
+  },
+  "12": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 12.0,
+    "user_avg_rating": 3.579710144927536,
+    "user_n_ratings": 69.0,
+    "user_std_rating": 1.1556230443491773
+  },
+  "13": {
+    "gender_enc": 0.0,
+    "age": 1.0,
+    "occupation": 17.0,
+    "user_avg_rating": 3.743243243243243,
+    "user_n_ratings": 74.0,
+    "user_std_rating": 1.1474905414694887
+  },
+  "14": {
+    "gender_enc": 1.0,
+    "age": 50.0,
+    "occupation": 1.0,
+    "user_avg_rating": 3.6507936507936503,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.1094713963477725
+  },
+  "15": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 20.0,
+    "user_avg_rating": 3.864406779661017,
+    "user_n_ratings": 59.0,
+    "user_std_rating": 1.1212312677656262
+  },
+  "16": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 14.0,
+    "user_avg_rating": 3.9726027397260273,
+    "user_n_ratings": 73.0,
+    "user_std_rating": 1.0404673461121796
+  },
+  "17": {
+    "gender_enc": 1.0,
+    "age": 25.0,
+    "occupation": 19.0,
+    "user_avg_rating": 3.6056338028169015,
+    "user_n_ratings": 71.0,
+    "user_std_rating": 1.2127757211035306
+  },
+  "18": {
+    "gender_enc": 1.0,
+    "age": 35.0,
+    "occupation": 17.0,
+    "user_avg_rating": 3.861111111111111,
+    "user_n_ratings": 72.0,
+    "user_std_rating": 1.078673618947285
+  },
+  "19": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 14.0,
+    "user_avg_rating": 3.736842105263158,
+    "user_n_ratings": 76.0,
+    "user_std_rating": 1.1239029738980326
+  },
+  "20": {
+    "gender_enc": 0.0,
+    "age": 25.0,
+    "occupation": 18.0,
+    "user_avg_rating": 4.0,
+    "user_n_ratings": 59.0,
+    "user_std_rating": 1.0985884360051028
+  },
+  "21": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 11.0,
+    "user_avg_rating": 3.788732394366197,
+    "user_n_ratings": 71.0,
+    "user_std_rating": 1.0408168901361834
+  },
+  "22": {
+    "gender_enc": 0.0,
+    "age": 1.0,
+    "occupation": 12.0,
+    "user_avg_rating": 3.45,
+    "user_n_ratings": 60.0,
+    "user_std_rating": 1.1992229122312246
+  },
+  "23": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 10.0,
+    "user_avg_rating": 3.84375,
+    "user_n_ratings": 64.0,
+    "user_std_rating": 1.0869901651108067
+  },
+  "24": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 4.0,
+    "user_avg_rating": 3.7966101694915255,
+    "user_n_ratings": 59.0,
+    "user_std_rating": 1.1413793986308571
+  },
+  "25": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 0.0,
+    "user_avg_rating": 3.838235294117647,
+    "user_n_ratings": 68.0,
+    "user_std_rating": 0.9713860556871784
+  },
+  "26": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 2.0,
+    "user_avg_rating": 3.661764705882353,
+    "user_n_ratings": 68.0,
+    "user_std_rating": 1.3227097256908735
+  },
+  "27": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 18.0,
+    "user_avg_rating": 3.85,
+    "user_n_ratings": 60.0,
+    "user_std_rating": 0.9535837844145132
+  },
+  "28": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 6.0,
+    "user_avg_rating": 3.6056338028169015,
+    "user_n_ratings": 71.0,
+    "user_std_rating": 1.1523748551756268
+  },
+  "29": {
+    "gender_enc": 0.0,
+    "age": 18.0,
+    "occupation": 11.0,
+    "user_avg_rating": 3.7205882352941178,
+    "user_n_ratings": 68.0,
+    "user_std_rating": 1.0628824261412098
+  },
+  "30": {
+    "gender_enc": 0.0,
+    "age": 25.0,
+    "occupation": 14.0,
+    "user_avg_rating": 4.059701492537314,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.0854491740948504
+  },
+  "31": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 4.0,
+    "user_avg_rating": 4.0,
+    "user_n_ratings": 66.0,
+    "user_std_rating": 1.066987131347674
+  },
+  "32": {
+    "gender_enc": 1.0,
+    "age": 45.0,
+    "occupation": 14.0,
+    "user_avg_rating": 3.878787878787879,
+    "user_n_ratings": 66.0,
+    "user_std_rating": 0.9847319278346618
+  },
+  "33": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 7.0,
+    "user_avg_rating": 3.607142857142857,
+    "user_n_ratings": 56.0,
+    "user_std_rating": 1.122959910699826
+  },
+  "34": {
+    "gender_enc": 0.0,
+    "age": 25.0,
+    "occupation": 9.0,
+    "user_avg_rating": 4.017857142857143,
+    "user_n_ratings": 56.0,
+    "user_std_rating": 1.0529796929505495
+  },
+  "35": {
+    "gender_enc": 0.0,
+    "age": 18.0,
+    "occupation": 15.0,
+    "user_avg_rating": 3.8333333333333335,
+    "user_n_ratings": 66.0,
+    "user_std_rating": 1.171236471339102
+  },
+  "36": {
+    "gender_enc": 1.0,
+    "age": 50.0,
+    "occupation": 7.0,
+    "user_avg_rating": 3.639344262295082,
+    "user_n_ratings": 61.0,
+    "user_std_rating": 1.0493297366294654
+  },
+  "37": {
+    "gender_enc": 1.0,
+    "age": 45.0,
+    "occupation": 0.0,
+    "user_avg_rating": 3.90625,
+    "user_n_ratings": 64.0,
+    "user_std_rating": 0.9875213479709756
+  },
+  "38": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 11.0,
+    "user_avg_rating": 3.878787878787879,
+    "user_n_ratings": 66.0,
+    "user_std_rating": 1.000233073071572
+  },
+  "39": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 4.0,
+    "user_avg_rating": 3.864406779661017,
+    "user_n_ratings": 59.0,
+    "user_std_rating": 1.0415112878465906
+  },
+  "40": {
+    "gender_enc": 0.0,
+    "age": 1.0,
+    "occupation": 2.0,
+    "user_avg_rating": 3.6,
+    "user_n_ratings": 50.0,
+    "user_std_rating": 1.3702375780893483
+  },
+  "41": {
+    "gender_enc": 1.0,
+    "age": 25.0,
+    "occupation": 0.0,
+    "user_avg_rating": 3.2711864406779663,
+    "user_n_ratings": 59.0,
+    "user_std_rating": 1.4243027147559786
+  },
+  "42": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 3.0,
+    "user_avg_rating": 3.6507936507936503,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.0342323030795502
+  },
+  "43": {
+    "gender_enc": 1.0,
+    "age": 35.0,
+    "occupation": 7.0,
+    "user_avg_rating": 4.066666666666666,
+    "user_n_ratings": 60.0,
+    "user_std_rating": 1.055520863737572
+  },
+  "44": {
+    "gender_enc": 1.0,
+    "age": 50.0,
+    "occupation": 2.0,
+    "user_avg_rating": 3.5625,
+    "user_n_ratings": 64.0,
+    "user_std_rating": 1.3077910614151866
+  },
+  "45": {
+    "gender_enc": 0.0,
+    "age": 25.0,
+    "occupation": 9.0,
+    "user_avg_rating": 3.6271186440677967,
+    "user_n_ratings": 59.0,
+    "user_std_rating": 1.143170200088571
+  },
+  "46": {
+    "gender_enc": 1.0,
+    "age": 35.0,
+    "occupation": 1.0,
+    "user_avg_rating": 3.815384615384616,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.1441742067467766
+  },
+  "47": {
+    "gender_enc": 0.0,
+    "age": 18.0,
+    "occupation": 10.0,
+    "user_avg_rating": 3.7611940298507465,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.2196565865253737
+  },
+  "48": {
+    "gender_enc": 1.0,
+    "age": 50.0,
+    "occupation": 9.0,
+    "user_avg_rating": 3.375,
+    "user_n_ratings": 72.0,
+    "user_std_rating": 1.1680910151688997
+  },
+  "49": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 20.0,
+    "user_avg_rating": 3.957142857142857,
+    "user_n_ratings": 70.0,
+    "user_std_rating": 1.095917513632924
+  },
+  "50": {
+    "gender_enc": 0.0,
+    "age": 56.0,
+    "occupation": 13.0,
+    "user_avg_rating": 3.810344827586207,
+    "user_n_ratings": 58.0,
+    "user_std_rating": 1.2060795782962674
+  },
+  "51": {
+    "gender_enc": 1.0,
+    "age": 45.0,
+    "occupation": 6.0,
+    "user_avg_rating": 3.421875,
+    "user_n_ratings": 64.0,
+    "user_std_rating": 1.2947352183803011
+  },
+  "52": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 1.0,
+    "user_avg_rating": 3.5873015873015874,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.101830158373179
+  },
+  "53": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 8.0,
+    "user_avg_rating": 3.769230769230769,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.042371556374435
+  },
+  "54": {
+    "gender_enc": 1.0,
+    "age": 45.0,
+    "occupation": 15.0,
+    "user_avg_rating": 3.701492537313433,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.1936057591503144
+  },
+  "55": {
+    "gender_enc": 0.0,
+    "age": 1.0,
+    "occupation": 12.0,
+    "user_avg_rating": 4.046153846153846,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 0.9590159219019976
+  },
+  "56": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 8.0,
+    "user_avg_rating": 3.73015873015873,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.1941571356906688
+  },
+  "57": {
+    "gender_enc": 0.0,
+    "age": 25.0,
+    "occupation": 19.0,
+    "user_avg_rating": 3.784615384615385,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.067887922670078
+  },
+  "58": {
+    "gender_enc": 0.0,
+    "age": 1.0,
+    "occupation": 3.0,
+    "user_avg_rating": 3.776119402985074,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.1257441380326123
+  },
+  "59": {
+    "gender_enc": 0.0,
+    "age": 1.0,
+    "occupation": 9.0,
+    "user_avg_rating": 3.6507936507936503,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.2463977793927452
+  },
+  "60": {
+    "gender_enc": 0.0,
+    "age": 25.0,
+    "occupation": 11.0,
+    "user_avg_rating": 4.052631578947368,
+    "user_n_ratings": 57.0,
+    "user_std_rating": 0.8540042788362812
+  },
+  "61": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 16.0,
+    "user_avg_rating": 3.926470588235294,
+    "user_n_ratings": 68.0,
+    "user_std_rating": 1.069470178082869
+  },
+  "62": {
+    "gender_enc": 0.0,
+    "age": 1.0,
+    "occupation": 13.0,
+    "user_avg_rating": 3.791044776119403,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.0081082408340134
+  },
+  "63": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 13.0,
+    "user_avg_rating": 3.746268656716418,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.2832638735483162
+  },
+  "64": {
+    "gender_enc": 1.0,
+    "age": 35.0,
+    "occupation": 1.0,
+    "user_avg_rating": 3.733333333333333,
+    "user_n_ratings": 60.0,
+    "user_std_rating": 1.1913056029197642
+  },
+  "65": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 20.0,
+    "user_avg_rating": 3.571428571428572,
+    "user_n_ratings": 56.0,
+    "user_std_rating": 1.1732959458821022
+  },
+  "66": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 19.0,
+    "user_avg_rating": 3.590909090909091,
+    "user_n_ratings": 66.0,
+    "user_std_rating": 1.1763996276419353
+  },
+  "67": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 10.0,
+    "user_avg_rating": 3.8656716417910446,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.0716105464554446
+  },
+  "68": {
+    "gender_enc": 0.0,
+    "age": 18.0,
+    "occupation": 15.0,
+    "user_avg_rating": 3.712121212121212,
+    "user_n_ratings": 66.0,
+    "user_std_rating": 0.9729440100129332
+  },
+  "69": {
+    "gender_enc": 1.0,
+    "age": 35.0,
+    "occupation": 18.0,
+    "user_avg_rating": 3.6666666666666665,
+    "user_n_ratings": 66.0,
+    "user_std_rating": 1.1810469062961877
+  },
+  "70": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 5.0,
+    "user_avg_rating": 4.016393442622951,
+    "user_n_ratings": 61.0,
+    "user_std_rating": 1.0565952122847002
+  },
+  "71": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 18.0,
+    "user_avg_rating": 3.734375,
+    "user_n_ratings": 64.0,
+    "user_std_rating": 1.2754356554178308
+  },
+  "72": {
+    "gender_enc": 0.0,
+    "age": 25.0,
+    "occupation": 4.0,
+    "user_avg_rating": 3.82089552238806,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.086074012968874
+  },
+  "73": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 3.0,
+    "user_avg_rating": 3.716417910447761,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.1120002472919623
+  },
+  "74": {
+    "gender_enc": 1.0,
+    "age": 50.0,
+    "occupation": 14.0,
+    "user_avg_rating": 3.8,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.003120132386944
+  },
+  "75": {
+    "gender_enc": 0.0,
+    "age": 18.0,
+    "occupation": 3.0,
+    "user_avg_rating": 3.696428571428572,
+    "user_n_ratings": 56.0,
+    "user_std_rating": 1.2492855100873803
+  },
+  "76": {
+    "gender_enc": 0.0,
+    "age": 25.0,
+    "occupation": 19.0,
+    "user_avg_rating": 3.7,
+    "user_n_ratings": 60.0,
+    "user_std_rating": 1.0938967819184429
+  },
+  "77": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 9.0,
+    "user_avg_rating": 3.880597014925373,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 0.9617280542305005
+  },
+  "78": {
+    "gender_enc": 1.0,
+    "age": 35.0,
+    "occupation": 2.0,
+    "user_avg_rating": 3.515151515151515,
+    "user_n_ratings": 66.0,
+    "user_std_rating": 1.2556631621139391
+  },
+  "79": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 4.0,
+    "user_avg_rating": 4.0,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 0.8876253645985945
+  },
+  "80": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 5.0,
+    "user_avg_rating": 3.656716417910448,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.0947843125885592
+  },
+  "81": {
+    "gender_enc": 1.0,
+    "age": 25.0,
+    "occupation": 20.0,
+    "user_avg_rating": 3.719298245614035,
+    "user_n_ratings": 57.0,
+    "user_std_rating": 1.0133816437501344
+  },
+  "82": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 7.0,
+    "user_avg_rating": 3.7384615384615385,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.1357393390007435
+  },
+  "83": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 6.0,
+    "user_avg_rating": 4.014925373134329,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 0.9291986986749264
+  },
+  "84": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 20.0,
+    "user_avg_rating": 3.615384615384616,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.319236375857115
+  },
+  "85": {
+    "gender_enc": 0.0,
+    "age": 56.0,
+    "occupation": 9.0,
+    "user_avg_rating": 3.757575757575758,
+    "user_n_ratings": 66.0,
+    "user_std_rating": 1.110240529180066
+  },
+  "86": {
+    "gender_enc": 1.0,
+    "age": 35.0,
+    "occupation": 5.0,
+    "user_avg_rating": 3.6666666666666665,
+    "user_n_ratings": 57.0,
+    "user_std_rating": 1.1700630833624397
+  },
+  "87": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 13.0,
+    "user_avg_rating": 3.72972972972973,
+    "user_n_ratings": 74.0,
+    "user_std_rating": 1.076489694767048
+  },
+  "88": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 3.0,
+    "user_avg_rating": 3.8285714285714287,
+    "user_n_ratings": 70.0,
+    "user_std_rating": 1.0351983436839751
+  },
+  "89": {
+    "gender_enc": 0.0,
+    "age": 1.0,
+    "occupation": 12.0,
+    "user_avg_rating": 3.840579710144928,
+    "user_n_ratings": 69.0,
+    "user_std_rating": 1.065821809488935
+  },
+  "90": {
+    "gender_enc": 1.0,
+    "age": 25.0,
+    "occupation": 19.0,
+    "user_avg_rating": 3.823529411764706,
+    "user_n_ratings": 68.0,
+    "user_std_rating": 1.1837352526539744
+  },
+  "91": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 16.0,
+    "user_avg_rating": 3.888888888888889,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.094135556723871
+  },
+  "92": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 6.0,
+    "user_avg_rating": 3.4516129032258065,
+    "user_n_ratings": 62.0,
+    "user_std_rating": 1.2370962743303064
+  },
+  "93": {
+    "gender_enc": 1.0,
+    "age": 50.0,
+    "occupation": 3.0,
+    "user_avg_rating": 3.9014084507042255,
+    "user_n_ratings": 71.0,
+    "user_std_rating": 0.928207636522666
+  },
+  "94": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 13.0,
+    "user_avg_rating": 3.6417910447761193,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.2022893885658237
+  },
+  "95": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 2.0,
+    "user_avg_rating": 3.895522388059701,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.0607934188716877
+  },
+  "96": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 4.0,
+    "user_avg_rating": 3.548387096774193,
+    "user_n_ratings": 62.0,
+    "user_std_rating": 1.0966030911423277
+  },
+  "97": {
+    "gender_enc": 0.0,
+    "age": 18.0,
+    "occupation": 15.0,
+    "user_avg_rating": 3.586206896551724,
+    "user_n_ratings": 58.0,
+    "user_std_rating": 1.1703123403547837
+  },
+  "98": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 19.0,
+    "user_avg_rating": 3.6984126984126986,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.2132988972341885
+  },
+  "99": {
+    "gender_enc": 1.0,
+    "age": 45.0,
+    "occupation": 3.0,
+    "user_avg_rating": 3.8793103448275854,
+    "user_n_ratings": 58.0,
+    "user_std_rating": 0.9925615665538732
+  },
+  "100": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 1.0,
+    "user_avg_rating": 3.6885245901639343,
+    "user_n_ratings": 61.0,
+    "user_std_rating": 1.1036452269118215
+  },
+  "101": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 17.0,
+    "user_avg_rating": 3.6166666666666663,
+    "user_n_ratings": 60.0,
+    "user_std_rating": 1.3911544610370472
+  },
+  "102": {
+    "gender_enc": 0.0,
+    "age": 56.0,
+    "occupation": 18.0,
+    "user_avg_rating": 3.8524590163934422,
+    "user_n_ratings": 61.0,
+    "user_std_rating": 1.1523319193960635
+  },
+  "103": {
+    "gender_enc": 0.0,
+    "age": 56.0,
+    "occupation": 18.0,
+    "user_avg_rating": 3.5942028985507246,
+    "user_n_ratings": 69.0,
+    "user_std_rating": 1.154515948730821
+  },
+  "104": {
+    "gender_enc": 0.0,
+    "age": 1.0,
+    "occupation": 16.0,
+    "user_avg_rating": 3.719298245614035,
+    "user_n_ratings": 57.0,
+    "user_std_rating": 1.2064467598950035
+  },
+  "105": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 13.0,
+    "user_avg_rating": 3.871428571428571,
+    "user_n_ratings": 70.0,
+    "user_std_rating": 0.9768542912933432
+  },
+  "106": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 18.0,
+    "user_avg_rating": 3.430555555555556,
+    "user_n_ratings": 72.0,
+    "user_std_rating": 1.298171942092536
+  },
+  "107": {
+    "gender_enc": 1.0,
+    "age": 50.0,
+    "occupation": 12.0,
+    "user_avg_rating": 3.875,
+    "user_n_ratings": 64.0,
+    "user_std_rating": 1.2149857925879115
+  },
+  "108": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 11.0,
+    "user_avg_rating": 3.672131147540984,
+    "user_n_ratings": 61.0,
+    "user_std_rating": 1.091196766176321
+  },
+  "109": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 5.0,
+    "user_avg_rating": 3.892307692307692,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.0326403797286614
+  },
+  "110": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 20.0,
+    "user_avg_rating": 3.753846153846154,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.0611133485455446
+  },
+  "111": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 3.0,
+    "user_avg_rating": 3.943661971830986,
+    "user_n_ratings": 71.0,
+    "user_std_rating": 0.9693491770057736
+  },
+  "112": {
+    "gender_enc": 0.0,
+    "age": 1.0,
+    "occupation": 18.0,
+    "user_avg_rating": 3.6986301369863015,
+    "user_n_ratings": 73.0,
+    "user_std_rating": 1.1982038815898255
+  },
+  "113": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 15.0,
+    "user_avg_rating": 3.7586206896551726,
+    "user_n_ratings": 58.0,
+    "user_std_rating": 1.1441743338456318
+  },
+  "114": {
+    "gender_enc": 1.0,
+    "age": 35.0,
+    "occupation": 12.0,
+    "user_avg_rating": 3.9846153846153847,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 0.992035591793266
+  },
+  "115": {
+    "gender_enc": 1.0,
+    "age": 25.0,
+    "occupation": 3.0,
+    "user_avg_rating": 3.3181818181818183,
+    "user_n_ratings": 66.0,
+    "user_std_rating": 1.2546417313822595
+  },
+  "116": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 16.0,
+    "user_avg_rating": 3.586206896551724,
+    "user_n_ratings": 58.0,
+    "user_std_rating": 1.06019665105063
+  },
+  "117": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 0.0,
+    "user_avg_rating": 3.6825396825396814,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.3891909553753476
+  },
+  "118": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 17.0,
+    "user_avg_rating": 3.672131147540984,
+    "user_n_ratings": 61.0,
+    "user_std_rating": 1.044370806999919
+  },
+  "119": {
+    "gender_enc": 1.0,
+    "age": 35.0,
+    "occupation": 19.0,
+    "user_avg_rating": 3.661538461538461,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.064731818888609
+  },
+  "120": {
+    "gender_enc": 0.0,
+    "age": 25.0,
+    "occupation": 16.0,
+    "user_avg_rating": 3.758064516129033,
+    "user_n_ratings": 62.0,
+    "user_std_rating": 1.196791939557209
+  },
+  "121": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 14.0,
+    "user_avg_rating": 3.7777777777777777,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.007142947928805
+  },
+  "122": {
+    "gender_enc": 1.0,
+    "age": 45.0,
+    "occupation": 10.0,
+    "user_avg_rating": 3.6140350877192975,
+    "user_n_ratings": 57.0,
+    "user_std_rating": 1.221158495108411
+  },
+  "123": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 12.0,
+    "user_avg_rating": 3.689655172413793,
+    "user_n_ratings": 58.0,
+    "user_std_rating": 1.029510129662666
+  },
+  "124": {
+    "gender_enc": 1.0,
+    "age": 35.0,
+    "occupation": 0.0,
+    "user_avg_rating": 3.830188679245283,
+    "user_n_ratings": 53.0,
+    "user_std_rating": 1.1558521507895203
+  },
+  "125": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 16.0,
+    "user_avg_rating": 3.640625,
+    "user_n_ratings": 64.0,
+    "user_std_rating": 1.117923067177247
+  },
+  "126": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 5.0,
+    "user_avg_rating": 3.907692307692308,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.1280940359057632
+  },
+  "127": {
+    "gender_enc": 1.0,
+    "age": 50.0,
+    "occupation": 3.0,
+    "user_avg_rating": 3.8813559322033897,
+    "user_n_ratings": 59.0,
+    "user_std_rating": 1.09991764210047
+  },
+  "128": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 19.0,
+    "user_avg_rating": 3.9178082191780814,
+    "user_n_ratings": 73.0,
+    "user_std_rating": 1.1637275437329038
+  },
+  "129": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 15.0,
+    "user_avg_rating": 3.621212121212121,
+    "user_n_ratings": 66.0,
+    "user_std_rating": 1.2374309803926162
+  },
+  "130": {
+    "gender_enc": 1.0,
+    "age": 50.0,
+    "occupation": 14.0,
+    "user_avg_rating": 3.377049180327869,
+    "user_n_ratings": 61.0,
+    "user_std_rating": 1.3803856275962587
+  },
+  "131": {
+    "gender_enc": 1.0,
+    "age": 50.0,
+    "occupation": 14.0,
+    "user_avg_rating": 3.789473684210526,
+    "user_n_ratings": 57.0,
+    "user_std_rating": 1.0130724502589556
+  },
+  "132": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 5.0,
+    "user_avg_rating": 3.4754098360655736,
+    "user_n_ratings": 61.0,
+    "user_std_rating": 1.3115710347651677
+  },
+  "133": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 14.0,
+    "user_avg_rating": 3.8412698412698414,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.1388498613322242
+  },
+  "134": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 13.0,
+    "user_avg_rating": 3.606060606060606,
+    "user_n_ratings": 66.0,
+    "user_std_rating": 1.251199890305768
+  },
+  "135": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 10.0,
+    "user_avg_rating": 3.816666666666667,
+    "user_n_ratings": 60.0,
+    "user_std_rating": 1.0494819814453846
+  },
+  "136": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 6.0,
+    "user_avg_rating": 3.774193548387097,
+    "user_n_ratings": 62.0,
+    "user_std_rating": 1.1223417386510892
+  },
+  "137": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 8.0,
+    "user_avg_rating": 3.808823529411765,
+    "user_n_ratings": 68.0,
+    "user_std_rating": 1.0825254185589193
+  },
+  "138": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 15.0,
+    "user_avg_rating": 3.895522388059701,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.1164653146128654
+  },
+  "139": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 4.0,
+    "user_avg_rating": 3.7966101694915255,
+    "user_n_ratings": 59.0,
+    "user_std_rating": 1.1712012845195807
+  },
+  "140": {
+    "gender_enc": 1.0,
+    "age": 45.0,
+    "occupation": 19.0,
+    "user_avg_rating": 3.792452830188679,
+    "user_n_ratings": 53.0,
+    "user_std_rating": 1.1495566129539103
+  },
+  "141": {
+    "gender_enc": 1.0,
+    "age": 50.0,
+    "occupation": 9.0,
+    "user_avg_rating": 3.7222222222222223,
+    "user_n_ratings": 72.0,
+    "user_std_rating": 1.077584965732381
+  },
+  "142": {
+    "gender_enc": 1.0,
+    "age": 35.0,
+    "occupation": 17.0,
+    "user_avg_rating": 3.876923076923077,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.053382829087025
+  },
+  "143": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 2.0,
+    "user_avg_rating": 3.661290322580645,
+    "user_n_ratings": 62.0,
+    "user_std_rating": 1.0549422855334083
+  },
+  "144": {
+    "gender_enc": 0.0,
+    "age": 56.0,
+    "occupation": 12.0,
+    "user_avg_rating": 3.7903225806451615,
+    "user_n_ratings": 62.0,
+    "user_std_rating": 1.1182113465473913
+  },
+  "145": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 10.0,
+    "user_avg_rating": 3.783783783783784,
+    "user_n_ratings": 74.0,
+    "user_std_rating": 1.0503785393360887
+  },
+  "146": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 16.0,
+    "user_avg_rating": 3.6582278481012658,
+    "user_n_ratings": 79.0,
+    "user_std_rating": 1.2287796317147777
+  },
+  "147": {
+    "gender_enc": 0.0,
+    "age": 18.0,
+    "occupation": 12.0,
+    "user_avg_rating": 3.6610169491525424,
+    "user_n_ratings": 59.0,
+    "user_std_rating": 1.2262948046793785
+  },
+  "148": {
+    "gender_enc": 0.0,
+    "age": 1.0,
+    "occupation": 5.0,
+    "user_avg_rating": 3.7058823529411766,
+    "user_n_ratings": 51.0,
+    "user_std_rating": 1.1712235934621336
+  },
+  "149": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 16.0,
+    "user_avg_rating": 3.8,
+    "user_n_ratings": 70.0,
+    "user_std_rating": 1.015816941171496
+  },
+  "150": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 12.0,
+    "user_avg_rating": 3.716666666666667,
+    "user_n_ratings": 60.0,
+    "user_std_rating": 1.1657785158522176
+  },
+  "151": {
+    "gender_enc": 0.0,
+    "age": 25.0,
+    "occupation": 18.0,
+    "user_avg_rating": 3.890625,
+    "user_n_ratings": 64.0,
+    "user_std_rating": 1.1000315652036734
+  },
+  "152": {
+    "gender_enc": 0.0,
+    "age": 1.0,
+    "occupation": 20.0,
+    "user_avg_rating": 3.8983050847457625,
+    "user_n_ratings": 59.0,
+    "user_std_rating": 1.1400985325572597
+  },
+  "153": {
+    "gender_enc": 0.0,
+    "age": 1.0,
+    "occupation": 18.0,
+    "user_avg_rating": 3.893939393939394,
+    "user_n_ratings": 66.0,
+    "user_std_rating": 1.1111849237331897
+  },
+  "154": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 9.0,
+    "user_avg_rating": 3.82089552238806,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.072032523454062
+  },
+  "155": {
+    "gender_enc": 1.0,
+    "age": 25.0,
+    "occupation": 2.0,
+    "user_avg_rating": 3.850746268656717,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.003837052805061
+  },
+  "156": {
+    "gender_enc": 1.0,
+    "age": 25.0,
+    "occupation": 13.0,
+    "user_avg_rating": 3.764705882352941,
+    "user_n_ratings": 68.0,
+    "user_std_rating": 1.1475821052644075
+  },
+  "157": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 18.0,
+    "user_avg_rating": 3.6984126984126986,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.158905499152188
+  },
+  "158": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 4.0,
+    "user_avg_rating": 3.8656716417910446,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.0716105464554446
+  },
+  "159": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 4.0,
+    "user_avg_rating": 3.706896551724138,
+    "user_n_ratings": 58.0,
+    "user_std_rating": 1.242643202798609
+  },
+  "160": {
+    "gender_enc": 0.0,
+    "age": 18.0,
+    "occupation": 19.0,
+    "user_avg_rating": 3.776119402985074,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.1911402166957266
+  },
+  "161": {
+    "gender_enc": 1.0,
+    "age": 35.0,
+    "occupation": 16.0,
+    "user_avg_rating": 3.567164179104477,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.2579911908567485
+  },
+  "162": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 20.0,
+    "user_avg_rating": 3.8225806451612905,
+    "user_n_ratings": 62.0,
+    "user_std_rating": 1.1383651427849386
+  },
+  "163": {
+    "gender_enc": 0.0,
+    "age": 56.0,
+    "occupation": 9.0,
+    "user_avg_rating": 3.5294117647058822,
+    "user_n_ratings": 68.0,
+    "user_std_rating": 1.2152094375756628
+  },
+  "164": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 4.0,
+    "user_avg_rating": 3.7540983606557377,
+    "user_n_ratings": 61.0,
+    "user_std_rating": 1.1053768242084996
+  },
+  "165": {
+    "gender_enc": 0.0,
+    "age": 25.0,
+    "occupation": 3.0,
+    "user_avg_rating": 3.636363636363636,
+    "user_n_ratings": 66.0,
+    "user_std_rating": 1.1849876810312434
+  },
+  "166": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 5.0,
+    "user_avg_rating": 3.6885245901639343,
+    "user_n_ratings": 61.0,
+    "user_std_rating": 1.148056090478704
+  },
+  "167": {
+    "gender_enc": 1.0,
+    "age": 25.0,
+    "occupation": 3.0,
+    "user_avg_rating": 3.90625,
+    "user_n_ratings": 64.0,
+    "user_std_rating": 0.9875213479709756
+  },
+  "168": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 6.0,
+    "user_avg_rating": 3.661764705882353,
+    "user_n_ratings": 68.0,
+    "user_std_rating": 1.253178574994516
+  },
+  "169": {
+    "gender_enc": 1.0,
+    "age": 50.0,
+    "occupation": 6.0,
+    "user_avg_rating": 3.8732394366197194,
+    "user_n_ratings": 71.0,
+    "user_std_rating": 1.0813956255663162
+  },
+  "170": {
+    "gender_enc": 1.0,
+    "age": 35.0,
+    "occupation": 17.0,
+    "user_avg_rating": 3.9444444444444446,
+    "user_n_ratings": 54.0,
+    "user_std_rating": 1.1560614116133208
+  },
+  "171": {
+    "gender_enc": 1.0,
+    "age": 45.0,
+    "occupation": 2.0,
+    "user_avg_rating": 3.807017543859649,
+    "user_n_ratings": 57.0,
+    "user_std_rating": 1.0253674688204657
+  },
+  "172": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 0.0,
+    "user_avg_rating": 3.9272727272727272,
+    "user_n_ratings": 55.0,
+    "user_std_rating": 1.0157016449971084
+  },
+  "173": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 3.0,
+    "user_avg_rating": 3.6769230769230767,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.2261180141468375
+  },
+  "174": {
+    "gender_enc": 1.0,
+    "age": 35.0,
+    "occupation": 5.0,
+    "user_avg_rating": 3.827586206896552,
+    "user_n_ratings": 58.0,
+    "user_std_rating": 1.1567942854085085
+  },
+  "175": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 8.0,
+    "user_avg_rating": 3.909090909090909,
+    "user_n_ratings": 66.0,
+    "user_std_rating": 0.9401681147093236
+  },
+  "176": {
+    "gender_enc": 0.0,
+    "age": 1.0,
+    "occupation": 13.0,
+    "user_avg_rating": 3.9375,
+    "user_n_ratings": 64.0,
+    "user_std_rating": 1.096531327587567
+  },
+  "177": {
+    "gender_enc": 0.0,
+    "age": 18.0,
+    "occupation": 11.0,
+    "user_avg_rating": 3.5576923076923075,
+    "user_n_ratings": 52.0,
+    "user_std_rating": 1.2112780730021273
+  },
+  "178": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 19.0,
+    "user_avg_rating": 3.745762711864407,
+    "user_n_ratings": 59.0,
+    "user_std_rating": 1.1976013431882548
+  },
+  "179": {
+    "gender_enc": 0.0,
+    "age": 18.0,
+    "occupation": 3.0,
+    "user_avg_rating": 3.904109589041096,
+    "user_n_ratings": 73.0,
+    "user_std_rating": 1.1804469911582436
+  },
+  "180": {
+    "gender_enc": 1.0,
+    "age": 45.0,
+    "occupation": 20.0,
+    "user_avg_rating": 3.8260869565217392,
+    "user_n_ratings": 69.0,
+    "user_std_rating": 1.0425720702853736
+  },
+  "181": {
+    "gender_enc": 1.0,
+    "age": 25.0,
+    "occupation": 11.0,
+    "user_avg_rating": 3.619047619047619,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.0988053839918157
+  },
+  "182": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 9.0,
+    "user_avg_rating": 3.957142857142857,
+    "user_n_ratings": 70.0,
+    "user_std_rating": 1.0416780537679875
+  },
+  "183": {
+    "gender_enc": 0.0,
+    "age": 18.0,
+    "occupation": 6.0,
+    "user_avg_rating": 3.733333333333333,
+    "user_n_ratings": 60.0,
+    "user_std_rating": 1.1026419224025308
+  },
+  "184": {
+    "gender_enc": 1.0,
+    "age": 50.0,
+    "occupation": 2.0,
+    "user_avg_rating": 3.75,
+    "user_n_ratings": 56.0,
+    "user_std_rating": 1.2968493288806462
+  },
+  "185": {
+    "gender_enc": 1.0,
+    "age": 50.0,
+    "occupation": 13.0,
+    "user_avg_rating": 3.5892857142857144,
+    "user_n_ratings": 56.0,
+    "user_std_rating": 1.0917339954783478
+  },
+  "186": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 9.0,
+    "user_avg_rating": 3.7142857142857135,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.0690449676496978
+  },
+  "187": {
+    "gender_enc": 0.0,
+    "age": 25.0,
+    "occupation": 15.0,
+    "user_avg_rating": 3.675675675675676,
+    "user_n_ratings": 74.0,
+    "user_std_rating": 1.2287437409989348
+  },
+  "188": {
+    "gender_enc": 0.0,
+    "age": 56.0,
+    "occupation": 15.0,
+    "user_avg_rating": 3.5,
+    "user_n_ratings": 64.0,
+    "user_std_rating": 1.2724180205607036
+  },
+  "189": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 9.0,
+    "user_avg_rating": 3.9466666666666663,
+    "user_n_ratings": 75.0,
+    "user_std_rating": 1.0512969253380442
+  },
+  "190": {
+    "gender_enc": 1.0,
+    "age": 50.0,
+    "occupation": 12.0,
+    "user_avg_rating": 3.53125,
+    "user_n_ratings": 64.0,
+    "user_std_rating": 1.246821355312577
+  },
+  "191": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 5.0,
+    "user_avg_rating": 3.771929824561404,
+    "user_n_ratings": 57.0,
+    "user_std_rating": 1.2958387225991777
+  },
+  "192": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 11.0,
+    "user_avg_rating": 3.7142857142857135,
+    "user_n_ratings": 56.0,
+    "user_std_rating": 0.985610760609162
+  },
+  "193": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 8.0,
+    "user_avg_rating": 3.615384615384616,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.2208130960079908
+  },
+  "194": {
+    "gender_enc": 0.0,
+    "age": 25.0,
+    "occupation": 12.0,
+    "user_avg_rating": 3.769230769230769,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.1828095626678292
+  },
+  "195": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 3.0,
+    "user_avg_rating": 3.7096774193548394,
+    "user_n_ratings": 62.0,
+    "user_std_rating": 1.1218704634933594
+  },
+  "196": {
+    "gender_enc": 1.0,
+    "age": 25.0,
+    "occupation": 10.0,
+    "user_avg_rating": 3.953125,
+    "user_n_ratings": 64.0,
+    "user_std_rating": 1.1468339786574056
+  },
+  "197": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 19.0,
+    "user_avg_rating": 3.5846153846153848,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.0881794959401756
+  },
+  "198": {
+    "gender_enc": 1.0,
+    "age": 25.0,
+    "occupation": 17.0,
+    "user_avg_rating": 3.6379310344827593,
+    "user_n_ratings": 58.0,
+    "user_std_rating": 1.18022114879907
+  },
+  "199": {
+    "gender_enc": 0.0,
+    "age": 18.0,
+    "occupation": 10.0,
+    "user_avg_rating": 3.815384615384616,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.130435586570334
+  },
+  "200": {
+    "gender_enc": 1.0,
+    "age": 50.0,
+    "occupation": 20.0,
+    "user_avg_rating": 3.814814814814815,
+    "user_n_ratings": 54.0,
+    "user_std_rating": 1.2142871823773047
+  },
+  "201": {
+    "gender_enc": 1.0,
+    "age": 35.0,
+    "occupation": 3.0,
+    "user_avg_rating": 3.8392857142857135,
+    "user_n_ratings": 56.0,
+    "user_std_rating": 1.022950913499065
+  },
+  "202": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 17.0,
+    "user_avg_rating": 3.911764705882353,
+    "user_n_ratings": 68.0,
+    "user_std_rating": 1.1294602345467062
+  },
+  "203": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 0.0,
+    "user_avg_rating": 3.9836065573770494,
+    "user_n_ratings": 61.0,
+    "user_std_rating": 1.0565952122847004
+  },
+  "204": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 6.0,
+    "user_avg_rating": 3.875,
+    "user_n_ratings": 64.0,
+    "user_std_rating": 1.201850425154663
+  },
+  "205": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 5.0,
+    "user_avg_rating": 3.5846153846153848,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.130435586570334
+  },
+  "206": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 14.0,
+    "user_avg_rating": 3.7547169811320753,
+    "user_n_ratings": 53.0,
+    "user_std_rating": 1.2543104200708866
+  },
+  "207": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 17.0,
+    "user_avg_rating": 3.84375,
+    "user_n_ratings": 64.0,
+    "user_std_rating": 1.0722880150881045
+  },
+  "208": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 10.0,
+    "user_avg_rating": 3.7540983606557377,
+    "user_n_ratings": 61.0,
+    "user_std_rating": 1.149720802411293
+  },
+  "209": {
+    "gender_enc": 0.0,
+    "age": 1.0,
+    "occupation": 19.0,
+    "user_avg_rating": 3.955223880597015,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 0.9117554799279532
+  },
+  "210": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 14.0,
+    "user_avg_rating": 3.689655172413793,
+    "user_n_ratings": 58.0,
+    "user_std_rating": 1.1271279531923222
+  },
+  "211": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 15.0,
+    "user_avg_rating": 3.7611940298507465,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.207169896390602
+  },
+  "212": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 6.0,
+    "user_avg_rating": 3.7142857142857135,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.1419927606766114
+  },
+  "213": {
+    "gender_enc": 0.0,
+    "age": 1.0,
+    "occupation": 20.0,
+    "user_avg_rating": 3.75,
+    "user_n_ratings": 60.0,
+    "user_std_rating": 1.098920888255414
+  },
+  "214": {
+    "gender_enc": 1.0,
+    "age": 50.0,
+    "occupation": 9.0,
+    "user_avg_rating": 3.871428571428571,
+    "user_n_ratings": 70.0,
+    "user_std_rating": 1.16620813231065
+  },
+  "215": {
+    "gender_enc": 1.0,
+    "age": 50.0,
+    "occupation": 11.0,
+    "user_avg_rating": 3.625,
+    "user_n_ratings": 64.0,
+    "user_std_rating": 1.1478067422089475
+  },
+  "216": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 13.0,
+    "user_avg_rating": 3.7857142857142856,
+    "user_n_ratings": 70.0,
+    "user_std_rating": 1.075320742752115
+  },
+  "217": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 4.0,
+    "user_avg_rating": 3.915254237288136,
+    "user_n_ratings": 59.0,
+    "user_std_rating": 1.038701702777282
+  },
+  "218": {
+    "gender_enc": 1.0,
+    "age": 35.0,
+    "occupation": 20.0,
+    "user_avg_rating": 3.952380952380953,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.183605364547735
+  },
+  "219": {
+    "gender_enc": 0.0,
+    "age": 25.0,
+    "occupation": 17.0,
+    "user_avg_rating": 3.60655737704918,
+    "user_n_ratings": 61.0,
+    "user_std_rating": 1.1730116300160909
+  },
+  "220": {
+    "gender_enc": 1.0,
+    "age": 25.0,
+    "occupation": 4.0,
+    "user_avg_rating": 3.815384615384616,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.0590725260267189
+  },
+  "221": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 2.0,
+    "user_avg_rating": 3.942857142857143,
+    "user_n_ratings": 70.0,
+    "user_std_rating": 1.0198851069948904
+  },
+  "222": {
+    "gender_enc": 1.0,
+    "age": 50.0,
+    "occupation": 4.0,
+    "user_avg_rating": 3.7454545454545456,
+    "user_n_ratings": 55.0,
+    "user_std_rating": 1.2651772210537942
+  },
+  "223": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 16.0,
+    "user_avg_rating": 3.784615384615385,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.2685166988986054
+  },
+  "224": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 18.0,
+    "user_avg_rating": 3.771929824561404,
+    "user_n_ratings": 57.0,
+    "user_std_rating": 1.0859088336446427
+  },
+  "225": {
+    "gender_enc": 1.0,
+    "age": 45.0,
+    "occupation": 18.0,
+    "user_avg_rating": 3.796875,
+    "user_n_ratings": 64.0,
+    "user_std_rating": 1.0717096192236533
+  },
+  "226": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 20.0,
+    "user_avg_rating": 3.737704918032787,
+    "user_n_ratings": 61.0,
+    "user_std_rating": 1.153279950752957
+  },
+  "227": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 11.0,
+    "user_avg_rating": 3.737704918032787,
+    "user_n_ratings": 61.0,
+    "user_std_rating": 1.167642059084066
+  },
+  "228": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 8.0,
+    "user_avg_rating": 4.096774193548387,
+    "user_n_ratings": 62.0,
+    "user_std_rating": 0.8628902523031713
+  },
+  "229": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 0.0,
+    "user_avg_rating": 3.946428571428572,
+    "user_n_ratings": 56.0,
+    "user_std_rating": 1.016583276687925
+  },
+  "230": {
+    "gender_enc": 0.0,
+    "age": 1.0,
+    "occupation": 17.0,
+    "user_avg_rating": 3.73015873015873,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.1805732506730842
+  },
+  "231": {
+    "gender_enc": 0.0,
+    "age": 56.0,
+    "occupation": 20.0,
+    "user_avg_rating": 3.741935483870968,
+    "user_n_ratings": 62.0,
+    "user_std_rating": 1.240511315401148
+  },
+  "232": {
+    "gender_enc": 1.0,
+    "age": 35.0,
+    "occupation": 3.0,
+    "user_avg_rating": 3.888888888888889,
+    "user_n_ratings": 72.0,
+    "user_std_rating": 1.1695136289609918
+  },
+  "233": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 9.0,
+    "user_avg_rating": 3.915254237288136,
+    "user_n_ratings": 59.0,
+    "user_std_rating": 1.1031012019915418
+  },
+  "234": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 6.0,
+    "user_avg_rating": 3.608108108108108,
+    "user_n_ratings": 74.0,
+    "user_std_rating": 1.1445830438709632
+  },
+  "235": {
+    "gender_enc": 1.0,
+    "age": 35.0,
+    "occupation": 0.0,
+    "user_avg_rating": 3.694915254237288,
+    "user_n_ratings": 59.0,
+    "user_std_rating": 1.1634407545062424
+  },
+  "236": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 16.0,
+    "user_avg_rating": 3.7903225806451615,
+    "user_n_ratings": 62.0,
+    "user_std_rating": 1.202962146961715
+  },
+  "237": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 1.0,
+    "user_avg_rating": 3.712328767123288,
+    "user_n_ratings": 73.0,
+    "user_std_rating": 1.020341065728004
+  },
+  "238": {
+    "gender_enc": 0.0,
+    "age": 56.0,
+    "occupation": 10.0,
+    "user_avg_rating": 3.706896551724138,
+    "user_n_ratings": 58.0,
+    "user_std_rating": 1.25668207942973
+  },
+  "239": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 8.0,
+    "user_avg_rating": 3.573529411764706,
+    "user_n_ratings": 68.0,
+    "user_std_rating": 1.2615576308034664
+  },
+  "240": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 6.0,
+    "user_avg_rating": 3.776119402985074,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.2287083082404189
+  },
+  "241": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 16.0,
+    "user_avg_rating": 3.7413793103448274,
+    "user_n_ratings": 58.0,
+    "user_std_rating": 1.1326160500175737
+  },
+  "242": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 16.0,
+    "user_avg_rating": 4.102941176470588,
+    "user_n_ratings": 68.0,
+    "user_std_rating": 0.9946079386934472
+  },
+  "243": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 1.0,
+    "user_avg_rating": 3.515625,
+    "user_n_ratings": 64.0,
+    "user_std_rating": 1.1682599664485425
+  },
+  "244": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 5.0,
+    "user_avg_rating": 3.6379310344827593,
+    "user_n_ratings": 58.0,
+    "user_std_rating": 1.1347505462337786
+  },
+  "245": {
+    "gender_enc": 1.0,
+    "age": 50.0,
+    "occupation": 13.0,
+    "user_avg_rating": 3.5588235294117645,
+    "user_n_ratings": 68.0,
+    "user_std_rating": 1.176668113356669
+  },
+  "246": {
+    "gender_enc": 1.0,
+    "age": 45.0,
+    "occupation": 5.0,
+    "user_avg_rating": 3.983870967741936,
+    "user_n_ratings": 62.0,
+    "user_std_rating": 1.123401384903155
+  },
+  "247": {
+    "gender_enc": 0.0,
+    "age": 25.0,
+    "occupation": 1.0,
+    "user_avg_rating": 3.890625,
+    "user_n_ratings": 64.0,
+    "user_std_rating": 0.9778042700235005
+  },
+  "248": {
+    "gender_enc": 1.0,
+    "age": 50.0,
+    "occupation": 0.0,
+    "user_avg_rating": 3.723076923076923,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.0681130018005514
+  },
+  "249": {
+    "gender_enc": 0.0,
+    "age": 18.0,
+    "occupation": 9.0,
+    "user_avg_rating": 3.5,
+    "user_n_ratings": 62.0,
+    "user_std_rating": 1.1125218730581374
+  },
+  "250": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 20.0,
+    "user_avg_rating": 3.5254237288135597,
+    "user_n_ratings": 59.0,
+    "user_std_rating": 1.1196663943334413
+  },
+  "251": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 4.0,
+    "user_avg_rating": 3.619047619047619,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.262723265835769
+  },
+  "252": {
+    "gender_enc": 1.0,
+    "age": 25.0,
+    "occupation": 1.0,
+    "user_avg_rating": 3.689655172413793,
+    "user_n_ratings": 58.0,
+    "user_std_rating": 1.0295101296626663
+  },
+  "253": {
+    "gender_enc": 0.0,
+    "age": 56.0,
+    "occupation": 15.0,
+    "user_avg_rating": 3.707692307692308,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.1554636099186135
+  },
+  "254": {
+    "gender_enc": 1.0,
+    "age": 25.0,
+    "occupation": 1.0,
+    "user_avg_rating": 3.707692307692308,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.1280940359057632
+  },
+  "255": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 9.0,
+    "user_avg_rating": 3.868852459016393,
+    "user_n_ratings": 61.0,
+    "user_std_rating": 1.0242950394631676
+  },
+  "256": {
+    "gender_enc": 1.0,
+    "age": 25.0,
+    "occupation": 1.0,
+    "user_avg_rating": 3.971014492753623,
+    "user_n_ratings": 69.0,
+    "user_std_rating": 1.1110542753295392
+  },
+  "257": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 15.0,
+    "user_avg_rating": 3.85,
+    "user_n_ratings": 60.0,
+    "user_std_rating": 1.2326765696741904
+  },
+  "258": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 15.0,
+    "user_avg_rating": 3.796875,
+    "user_n_ratings": 64.0,
+    "user_std_rating": 1.1152576398189806
+  },
+  "259": {
+    "gender_enc": 0.0,
+    "age": 1.0,
+    "occupation": 18.0,
+    "user_avg_rating": 4.119402985074627,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 0.9617280542305008
+  },
+  "260": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 6.0,
+    "user_avg_rating": 3.459016393442623,
+    "user_n_ratings": 61.0,
+    "user_std_rating": 1.2592824741600972
+  },
+  "261": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 11.0,
+    "user_avg_rating": 3.7611940298507465,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.1689097774604358
+  },
+  "262": {
+    "gender_enc": 0.0,
+    "age": 25.0,
+    "occupation": 14.0,
+    "user_avg_rating": 3.619047619047619,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.1836053645477342
+  },
+  "263": {
+    "gender_enc": 0.0,
+    "age": 18.0,
+    "occupation": 7.0,
+    "user_avg_rating": 3.534482758620689,
+    "user_n_ratings": 58.0,
+    "user_std_rating": 1.3664593412452737
+  },
+  "264": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 5.0,
+    "user_avg_rating": 3.5789473684210527,
+    "user_n_ratings": 57.0,
+    "user_std_rating": 1.2092998036209193
+  },
+  "265": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 9.0,
+    "user_avg_rating": 3.6166666666666663,
+    "user_n_ratings": 60.0,
+    "user_std_rating": 1.1363287103004602
+  },
+  "266": {
+    "gender_enc": 0.0,
+    "age": 56.0,
+    "occupation": 2.0,
+    "user_avg_rating": 4.015384615384615,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.0076629473115577
+  },
+  "267": {
+    "gender_enc": 0.0,
+    "age": 1.0,
+    "occupation": 18.0,
+    "user_avg_rating": 3.771929824561404,
+    "user_n_ratings": 57.0,
+    "user_std_rating": 1.2394921750984658
+  },
+  "268": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 16.0,
+    "user_avg_rating": 3.6379310344827593,
+    "user_n_ratings": 58.0,
+    "user_std_rating": 1.30717689459262
+  },
+  "269": {
+    "gender_enc": 0.0,
+    "age": 25.0,
+    "occupation": 6.0,
+    "user_avg_rating": 3.707692307692308,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.233935230814873
+  },
+  "270": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 20.0,
+    "user_avg_rating": 3.8333333333333335,
+    "user_n_ratings": 60.0,
+    "user_std_rating": 1.237365526563466
+  },
+  "271": {
+    "gender_enc": 0.0,
+    "age": 25.0,
+    "occupation": 19.0,
+    "user_avg_rating": 3.831168831168831,
+    "user_n_ratings": 77.0,
+    "user_std_rating": 1.1286064696014495
+  },
+  "272": {
+    "gender_enc": 1.0,
+    "age": 45.0,
+    "occupation": 3.0,
+    "user_avg_rating": 3.901639344262295,
+    "user_n_ratings": 61.0,
+    "user_std_rating": 1.0280226656513447
+  },
+  "273": {
+    "gender_enc": 0.0,
+    "age": 1.0,
+    "occupation": 13.0,
+    "user_avg_rating": 3.579710144927536,
+    "user_n_ratings": 69.0,
+    "user_std_rating": 1.2993867003711594
+  },
+  "274": {
+    "gender_enc": 1.0,
+    "age": 35.0,
+    "occupation": 19.0,
+    "user_avg_rating": 3.873015873015873,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.128688412274197
+  },
+  "275": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 14.0,
+    "user_avg_rating": 3.711864406779661,
+    "user_n_ratings": 59.0,
+    "user_std_rating": 1.2601429510811686
+  },
+  "276": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 7.0,
+    "user_avg_rating": 3.6885245901639343,
+    "user_n_ratings": 61.0,
+    "user_std_rating": 1.148056090478704
+  },
+  "277": {
+    "gender_enc": 1.0,
+    "age": 25.0,
+    "occupation": 20.0,
+    "user_avg_rating": 3.806451612903226,
+    "user_n_ratings": 62.0,
+    "user_std_rating": 1.1851362192912862
+  },
+  "278": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 14.0,
+    "user_avg_rating": 3.769230769230769,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.0572551544156503
+  },
+  "279": {
+    "gender_enc": 1.0,
+    "age": 35.0,
+    "occupation": 19.0,
+    "user_avg_rating": 3.8253968253968256,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.1293686866175898
+  },
+  "280": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 13.0,
+    "user_avg_rating": 3.629032258064516,
+    "user_n_ratings": 62.0,
+    "user_std_rating": 1.23120454104636
+  },
+  "281": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 8.0,
+    "user_avg_rating": 3.9047619047619047,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.01145512735582
+  },
+  "282": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 7.0,
+    "user_avg_rating": 3.589041095890411,
+    "user_n_ratings": 73.0,
+    "user_std_rating": 1.2341845760388177
+  },
+  "283": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 16.0,
+    "user_avg_rating": 3.701492537313433,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.1148437228861343
+  },
+  "284": {
+    "gender_enc": 0.0,
+    "age": 1.0,
+    "occupation": 1.0,
+    "user_avg_rating": 3.706896551724138,
+    "user_n_ratings": 58.0,
+    "user_std_rating": 1.0261257521795983
+  },
+  "285": {
+    "gender_enc": 1.0,
+    "age": 45.0,
+    "occupation": 2.0,
+    "user_avg_rating": 3.515151515151515,
+    "user_n_ratings": 66.0,
+    "user_std_rating": 1.2678561462008249
+  },
+  "286": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 7.0,
+    "user_avg_rating": 3.8615384615384616,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.1302229187880797
+  },
+  "287": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 11.0,
+    "user_avg_rating": 3.803030303030303,
+    "user_n_ratings": 66.0,
+    "user_std_rating": 1.2306308197230456
+  },
+  "288": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 0.0,
+    "user_avg_rating": 3.9516129032258074,
+    "user_n_ratings": 62.0,
+    "user_std_rating": 0.9988094446469872
+  },
+  "289": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 9.0,
+    "user_avg_rating": 3.473684210526316,
+    "user_n_ratings": 57.0,
+    "user_std_rating": 1.2550649265774312
+  },
+  "290": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 19.0,
+    "user_avg_rating": 4.032258064516129,
+    "user_n_ratings": 62.0,
+    "user_std_rating": 1.055318178039737
+  },
+  "291": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 2.0,
+    "user_avg_rating": 3.842105263157895,
+    "user_n_ratings": 57.0,
+    "user_std_rating": 1.1462590346148165
+  },
+  "292": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 5.0,
+    "user_avg_rating": 3.676470588235294,
+    "user_n_ratings": 68.0,
+    "user_std_rating": 1.2148481444392174
+  },
+  "293": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 6.0,
+    "user_avg_rating": 3.7083333333333335,
+    "user_n_ratings": 72.0,
+    "user_std_rating": 1.053999759467594
+  },
+  "294": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 19.0,
+    "user_avg_rating": 3.611111111111111,
+    "user_n_ratings": 72.0,
+    "user_std_rating": 1.1933566761427712
+  },
+  "295": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 17.0,
+    "user_avg_rating": 3.896551724137931,
+    "user_n_ratings": 58.0,
+    "user_std_rating": 0.9307543662321082
+  },
+  "296": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 10.0,
+    "user_avg_rating": 3.55,
+    "user_n_ratings": 60.0,
+    "user_std_rating": 1.170614788498269
+  },
+  "297": {
+    "gender_enc": 1.0,
+    "age": 45.0,
+    "occupation": 18.0,
+    "user_avg_rating": 3.649122807017544,
+    "user_n_ratings": 57.0,
+    "user_std_rating": 1.1416033222461328
+  },
+  "298": {
+    "gender_enc": 1.0,
+    "age": 35.0,
+    "occupation": 4.0,
+    "user_avg_rating": 3.3684210526315788,
+    "user_n_ratings": 57.0,
+    "user_std_rating": 1.1746059969710272
+  },
+  "299": {
+    "gender_enc": 0.0,
+    "age": 56.0,
+    "occupation": 18.0,
+    "user_avg_rating": 3.612903225806452,
+    "user_n_ratings": 62.0,
+    "user_std_rating": 1.1784240477785857
+  },
+  "300": {
+    "gender_enc": 1.0,
+    "age": 50.0,
+    "occupation": 10.0,
+    "user_avg_rating": 3.8484848484848486,
+    "user_n_ratings": 66.0,
+    "user_std_rating": 1.1127571335329367
+  },
+  "301": {
+    "gender_enc": 1.0,
+    "age": 45.0,
+    "occupation": 11.0,
+    "user_avg_rating": 3.6769230769230767,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.0474327589947647
+  },
+  "302": {
+    "gender_enc": 1.0,
+    "age": 25.0,
+    "occupation": 9.0,
+    "user_avg_rating": 3.852941176470588,
+    "user_n_ratings": 68.0,
+    "user_std_rating": 1.0260008711170394
+  },
+  "303": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 7.0,
+    "user_avg_rating": 3.567164179104477,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.1040405212838955
+  },
+  "304": {
+    "gender_enc": 1.0,
+    "age": 25.0,
+    "occupation": 8.0,
+    "user_avg_rating": 3.746268656716418,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.1056779571429487
+  },
+  "305": {
+    "gender_enc": 1.0,
+    "age": 35.0,
+    "occupation": 3.0,
+    "user_avg_rating": 3.7777777777777777,
+    "user_n_ratings": 54.0,
+    "user_std_rating": 0.9841511363197712
+  },
+  "306": {
+    "gender_enc": 1.0,
+    "age": 50.0,
+    "occupation": 4.0,
+    "user_avg_rating": 3.873015873015873,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.0700024644539523
+  },
+  "307": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 20.0,
+    "user_avg_rating": 3.7868852459016393,
+    "user_n_ratings": 61.0,
+    "user_std_rating": 1.2531926441208825
+  },
+  "308": {
+    "gender_enc": 0.0,
+    "age": 56.0,
+    "occupation": 7.0,
+    "user_avg_rating": 3.4923076923076923,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.2639605032777543
+  },
+  "309": {
+    "gender_enc": 1.0,
+    "age": 45.0,
+    "occupation": 8.0,
+    "user_avg_rating": 4.102941176470588,
+    "user_n_ratings": 68.0,
+    "user_std_rating": 1.0241808650083934
+  },
+  "310": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 14.0,
+    "user_avg_rating": 3.507692307692308,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.312477106027436
+  },
+  "311": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 14.0,
+    "user_avg_rating": 3.7777777777777777,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.1136172453655822
+  },
+  "312": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 15.0,
+    "user_avg_rating": 3.4827586206896552,
+    "user_n_ratings": 58.0,
+    "user_std_rating": 1.1734097758742947
+  },
+  "313": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 13.0,
+    "user_avg_rating": 3.784615384615385,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.12489315731967
+  },
+  "314": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 7.0,
+    "user_avg_rating": 3.796875,
+    "user_n_ratings": 64.0,
+    "user_std_rating": 1.1009330458427395
+  },
+  "315": {
+    "gender_enc": 0.0,
+    "age": 18.0,
+    "occupation": 17.0,
+    "user_avg_rating": 3.467741935483871,
+    "user_n_ratings": 62.0,
+    "user_std_rating": 1.3515958016357814
+  },
+  "316": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 9.0,
+    "user_avg_rating": 3.671641791044776,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.1856216845322571
+  },
+  "317": {
+    "gender_enc": 0.0,
+    "age": 25.0,
+    "occupation": 19.0,
+    "user_avg_rating": 3.85,
+    "user_n_ratings": 60.0,
+    "user_std_rating": 1.0707988464186564
+  },
+  "318": {
+    "gender_enc": 1.0,
+    "age": 45.0,
+    "occupation": 5.0,
+    "user_avg_rating": 3.4393939393939394,
+    "user_n_ratings": 66.0,
+    "user_std_rating": 1.2294938030161078
+  },
+  "319": {
+    "gender_enc": 1.0,
+    "age": 50.0,
+    "occupation": 11.0,
+    "user_avg_rating": 3.678571428571429,
+    "user_n_ratings": 56.0,
+    "user_std_rating": 1.2520113687712533
+  },
+  "320": {
+    "gender_enc": 1.0,
+    "age": 50.0,
+    "occupation": 1.0,
+    "user_avg_rating": 3.5303030303030303,
+    "user_n_ratings": 66.0,
+    "user_std_rating": 1.1531855140595682
+  },
+  "321": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 6.0,
+    "user_avg_rating": 3.565217391304348,
+    "user_n_ratings": 69.0,
+    "user_std_rating": 1.143758778424239
+  },
+  "322": {
+    "gender_enc": 1.0,
+    "age": 45.0,
+    "occupation": 15.0,
+    "user_avg_rating": 3.887096774193549,
+    "user_n_ratings": 62.0,
+    "user_std_rating": 1.057445711658134
+  },
+  "323": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 2.0,
+    "user_avg_rating": 3.742424242424242,
+    "user_n_ratings": 66.0,
+    "user_std_rating": 1.0274779587470262
+  },
+  "324": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 12.0,
+    "user_avg_rating": 3.59375,
+    "user_n_ratings": 64.0,
+    "user_std_rating": 1.1086778913041726
+  },
+  "325": {
+    "gender_enc": 0.0,
+    "age": 18.0,
+    "occupation": 2.0,
+    "user_avg_rating": 3.84375,
+    "user_n_ratings": 64.0,
+    "user_std_rating": 1.1299494299683124
+  },
+  "326": {
+    "gender_enc": 0.0,
+    "age": 56.0,
+    "occupation": 17.0,
+    "user_avg_rating": 3.706896551724138,
+    "user_n_ratings": 58.0,
+    "user_std_rating": 1.092375821994944
+  },
+  "327": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 10.0,
+    "user_avg_rating": 3.7540983606557377,
+    "user_n_ratings": 61.0,
+    "user_std_rating": 1.1497208024112937
+  },
+  "328": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 7.0,
+    "user_avg_rating": 3.656716417910448,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.135544707177615
+  },
+  "329": {
+    "gender_enc": 1.0,
+    "age": 45.0,
+    "occupation": 5.0,
+    "user_avg_rating": 3.4696969696969697,
+    "user_n_ratings": 66.0,
+    "user_std_rating": 1.2180652624892414
+  },
+  "330": {
+    "gender_enc": 1.0,
+    "age": 45.0,
+    "occupation": 0.0,
+    "user_avg_rating": 3.734375,
+    "user_n_ratings": 64.0,
+    "user_std_rating": 1.1442358994764994
+  },
+  "331": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 0.0,
+    "user_avg_rating": 3.761904761904762,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 0.9790430764895486
+  },
+  "332": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 7.0,
+    "user_avg_rating": 3.7205882352941178,
+    "user_n_ratings": 68.0,
+    "user_std_rating": 1.207508700074268
+  },
+  "333": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 4.0,
+    "user_avg_rating": 3.736842105263158,
+    "user_n_ratings": 76.0,
+    "user_std_rating": 1.0246094677502784
+  },
+  "334": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 15.0,
+    "user_avg_rating": 3.8194444444444446,
+    "user_n_ratings": 72.0,
+    "user_std_rating": 1.1299556128498829
+  },
+  "335": {
+    "gender_enc": 1.0,
+    "age": 45.0,
+    "occupation": 10.0,
+    "user_avg_rating": 3.6818181818181817,
+    "user_n_ratings": 66.0,
+    "user_std_rating": 1.229872925381892
+  },
+  "336": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 4.0,
+    "user_avg_rating": 3.7796610169491527,
+    "user_n_ratings": 59.0,
+    "user_std_rating": 1.1305750232113272
+  },
+  "337": {
+    "gender_enc": 1.0,
+    "age": 45.0,
+    "occupation": 3.0,
+    "user_avg_rating": 3.693333333333333,
+    "user_n_ratings": 75.0,
+    "user_std_rating": 1.2942005080183498
+  },
+  "338": {
+    "gender_enc": 1.0,
+    "age": 45.0,
+    "occupation": 5.0,
+    "user_avg_rating": 3.815384615384616,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.130435586570334
+  },
+  "339": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 13.0,
+    "user_avg_rating": 3.746478873239437,
+    "user_n_ratings": 71.0,
+    "user_std_rating": 1.1176289936309036
+  },
+  "340": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 18.0,
+    "user_avg_rating": 3.9047619047619047,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.01145512735582
+  },
+  "341": {
+    "gender_enc": 1.0,
+    "age": 25.0,
+    "occupation": 8.0,
+    "user_avg_rating": 3.507692307692308,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.0770775988043544
+  },
+  "342": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 11.0,
+    "user_avg_rating": 3.676470588235294,
+    "user_n_ratings": 68.0,
+    "user_std_rating": 1.2024995915919277
+  },
+  "343": {
+    "gender_enc": 1.0,
+    "age": 35.0,
+    "occupation": 10.0,
+    "user_avg_rating": 3.675675675675676,
+    "user_n_ratings": 74.0,
+    "user_std_rating": 1.159925695637536
+  },
+  "344": {
+    "gender_enc": 0.0,
+    "age": 25.0,
+    "occupation": 13.0,
+    "user_avg_rating": 3.6271186440677967,
+    "user_n_ratings": 59.0,
+    "user_std_rating": 1.2580541225782225
+  },
+  "345": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 15.0,
+    "user_avg_rating": 3.704918032786885,
+    "user_n_ratings": 61.0,
+    "user_std_rating": 1.2429033523043531
+  },
+  "346": {
+    "gender_enc": 1.0,
+    "age": 45.0,
+    "occupation": 0.0,
+    "user_avg_rating": 3.873015873015873,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.1428891444572291
+  },
+  "347": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 12.0,
+    "user_avg_rating": 3.672413793103448,
+    "user_n_ratings": 58.0,
+    "user_std_rating": 1.1143077630006917
+  },
+  "348": {
+    "gender_enc": 0.0,
+    "age": 56.0,
+    "occupation": 20.0,
+    "user_avg_rating": 3.912280701754386,
+    "user_n_ratings": 57.0,
+    "user_std_rating": 0.9870718195462554
+  },
+  "349": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 20.0,
+    "user_avg_rating": 3.457627118644068,
+    "user_n_ratings": 59.0,
+    "user_std_rating": 1.222236981060788
+  },
+  "350": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 12.0,
+    "user_avg_rating": 3.816666666666667,
+    "user_n_ratings": 60.0,
+    "user_std_rating": 1.0494819814453848
+  },
+  "351": {
+    "gender_enc": 1.0,
+    "age": 50.0,
+    "occupation": 1.0,
+    "user_avg_rating": 3.794117647058824,
+    "user_n_ratings": 68.0,
+    "user_std_rating": 1.113805142922384
+  },
+  "352": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 3.0,
+    "user_avg_rating": 3.555555555555556,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.1608920065604973
+  },
+  "353": {
+    "gender_enc": 0.0,
+    "age": 18.0,
+    "occupation": 5.0,
+    "user_avg_rating": 3.7936507936507935,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.1094713963477725
+  },
+  "354": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 4.0,
+    "user_avg_rating": 3.842105263157895,
+    "user_n_ratings": 57.0,
+    "user_std_rating": 1.0821518523658995
+  },
+  "355": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 2.0,
+    "user_avg_rating": 3.6507936507936503,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.1094713963477725
+  },
+  "356": {
+    "gender_enc": 0.0,
+    "age": 18.0,
+    "occupation": 0.0,
+    "user_avg_rating": 4.016129032258065,
+    "user_n_ratings": 62.0,
+    "user_std_rating": 1.1087126707837451
+  },
+  "357": {
+    "gender_enc": 0.0,
+    "age": 25.0,
+    "occupation": 3.0,
+    "user_avg_rating": 3.8,
+    "user_n_ratings": 70.0,
+    "user_std_rating": 1.0848094736878446
+  },
+  "358": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 19.0,
+    "user_avg_rating": 3.878787878787879,
+    "user_n_ratings": 66.0,
+    "user_std_rating": 1.130216473685142
+  },
+  "359": {
+    "gender_enc": 1.0,
+    "age": 45.0,
+    "occupation": 1.0,
+    "user_avg_rating": 3.939393939393939,
+    "user_n_ratings": 66.0,
+    "user_std_rating": 1.079583792718826
+  },
+  "360": {
+    "gender_enc": 1.0,
+    "age": 35.0,
+    "occupation": 4.0,
+    "user_avg_rating": 3.672413793103448,
+    "user_n_ratings": 58.0,
+    "user_std_rating": 1.0660293770759175
+  },
+  "361": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 2.0,
+    "user_avg_rating": 3.85,
+    "user_n_ratings": 60.0,
+    "user_std_rating": 1.038659501146566
+  },
+  "362": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 8.0,
+    "user_avg_rating": 3.640625,
+    "user_n_ratings": 64.0,
+    "user_std_rating": 1.059607407081914
+  },
+  "363": {
+    "gender_enc": 0.0,
+    "age": 18.0,
+    "occupation": 19.0,
+    "user_avg_rating": 3.9516129032258074,
+    "user_n_ratings": 62.0,
+    "user_std_rating": 1.092859377134786
+  },
+  "364": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 5.0,
+    "user_avg_rating": 3.915254237288136,
+    "user_n_ratings": 59.0,
+    "user_std_rating": 0.9876502171772942
+  },
+  "365": {
+    "gender_enc": 0.0,
+    "age": 18.0,
+    "occupation": 17.0,
+    "user_avg_rating": 3.704225352112676,
+    "user_n_ratings": 71.0,
+    "user_std_rating": 1.1262373030479234
+  },
+  "366": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 5.0,
+    "user_avg_rating": 3.925373134328358,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.158805979469893
+  },
+  "367": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 18.0,
+    "user_avg_rating": 3.628571428571429,
+    "user_n_ratings": 70.0,
+    "user_std_rating": 1.1186356670934383
+  },
+  "368": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 11.0,
+    "user_avg_rating": 3.671641791044776,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.2837924369840124
+  },
+  "369": {
+    "gender_enc": 0.0,
+    "age": 1.0,
+    "occupation": 10.0,
+    "user_avg_rating": 3.8656716417910446,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.0429492330254984
+  },
+  "370": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 1.0,
+    "user_avg_rating": 3.87037037037037,
+    "user_n_ratings": 54.0,
+    "user_std_rating": 1.133475142194766
+  },
+  "371": {
+    "gender_enc": 0.0,
+    "age": 1.0,
+    "occupation": 14.0,
+    "user_avg_rating": 3.606060606060606,
+    "user_n_ratings": 66.0,
+    "user_std_rating": 1.1486284513920588
+  },
+  "372": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 11.0,
+    "user_avg_rating": 3.704918032786885,
+    "user_n_ratings": 61.0,
+    "user_std_rating": 1.0383362059095946
+  },
+  "373": {
+    "gender_enc": 0.0,
+    "age": 18.0,
+    "occupation": 11.0,
+    "user_avg_rating": 3.771929824561404,
+    "user_n_ratings": 57.0,
+    "user_std_rating": 1.2679784791387023
+  },
+  "374": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 8.0,
+    "user_avg_rating": 3.970149253731343,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.0726651776982437
+  },
+  "375": {
+    "gender_enc": 1.0,
+    "age": 45.0,
+    "occupation": 20.0,
+    "user_avg_rating": 4.0,
+    "user_n_ratings": 61.0,
+    "user_std_rating": 1.0327955589886444
+  },
+  "376": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 1.0,
+    "user_avg_rating": 3.8135593220338975,
+    "user_n_ratings": 59.0,
+    "user_std_rating": 1.2383885005590023
+  },
+  "377": {
+    "gender_enc": 0.0,
+    "age": 18.0,
+    "occupation": 2.0,
+    "user_avg_rating": 3.6031746031746033,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.1004351417871394
+  },
+  "378": {
+    "gender_enc": 0.0,
+    "age": 18.0,
+    "occupation": 11.0,
+    "user_avg_rating": 3.7777777777777777,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.1973686801784995
+  },
+  "379": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 15.0,
+    "user_avg_rating": 3.735294117647059,
+    "user_n_ratings": 68.0,
+    "user_std_rating": 1.2170142944109992
+  },
+  "380": {
+    "gender_enc": 1.0,
+    "age": 35.0,
+    "occupation": 20.0,
+    "user_avg_rating": 3.589041095890411,
+    "user_n_ratings": 73.0,
+    "user_std_rating": 1.152721615693777
+  },
+  "381": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 0.0,
+    "user_avg_rating": 3.809523809523809,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 0.8772600831316909
+  },
+  "382": {
+    "gender_enc": 1.0,
+    "age": 35.0,
+    "occupation": 20.0,
+    "user_avg_rating": 3.784615384615385,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.1658192893345931
+  },
+  "383": {
+    "gender_enc": 0.0,
+    "age": 25.0,
+    "occupation": 2.0,
+    "user_avg_rating": 3.683333333333333,
+    "user_n_ratings": 60.0,
+    "user_std_rating": 1.1859583361742698
+  },
+  "384": {
+    "gender_enc": 0.0,
+    "age": 56.0,
+    "occupation": 19.0,
+    "user_avg_rating": 3.65625,
+    "user_n_ratings": 64.0,
+    "user_std_rating": 0.9794515796226976
+  },
+  "385": {
+    "gender_enc": 0.0,
+    "age": 18.0,
+    "occupation": 1.0,
+    "user_avg_rating": 3.875,
+    "user_n_ratings": 56.0,
+    "user_std_rating": 1.0628007595713578
+  },
+  "386": {
+    "gender_enc": 0.0,
+    "age": 25.0,
+    "occupation": 8.0,
+    "user_avg_rating": 3.739130434782609,
+    "user_n_ratings": 69.0,
+    "user_std_rating": 1.1068260652057873
+  },
+  "387": {
+    "gender_enc": 1.0,
+    "age": 50.0,
+    "occupation": 18.0,
+    "user_avg_rating": 3.6231884057971016,
+    "user_n_ratings": 69.0,
+    "user_std_rating": 1.1894320107088476
+  },
+  "388": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 14.0,
+    "user_avg_rating": 3.484848484848485,
+    "user_n_ratings": 66.0,
+    "user_std_rating": 1.2678561462008249
+  },
+  "389": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 17.0,
+    "user_avg_rating": 3.73015873015873,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.019271548963962
+  },
+  "390": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 10.0,
+    "user_avg_rating": 3.741935483870968,
+    "user_n_ratings": 62.0,
+    "user_std_rating": 1.070245626334192
+  },
+  "391": {
+    "gender_enc": 1.0,
+    "age": 35.0,
+    "occupation": 15.0,
+    "user_avg_rating": 3.921875,
+    "user_n_ratings": 64.0,
+    "user_std_rating": 0.8962831096804249
+  },
+  "392": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 16.0,
+    "user_avg_rating": 3.739130434782609,
+    "user_n_ratings": 69.0,
+    "user_std_rating": 1.0240084718319624
+  },
+  "393": {
+    "gender_enc": 1.0,
+    "age": 45.0,
+    "occupation": 4.0,
+    "user_avg_rating": 3.671641791044776,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.2719355294016752
+  },
+  "394": {
+    "gender_enc": 0.0,
+    "age": 25.0,
+    "occupation": 11.0,
+    "user_avg_rating": 3.8055555555555554,
+    "user_n_ratings": 72.0,
+    "user_std_rating": 1.2742176709363466
+  },
+  "395": {
+    "gender_enc": 1.0,
+    "age": 45.0,
+    "occupation": 10.0,
+    "user_avg_rating": 3.693548387096774,
+    "user_n_ratings": 62.0,
+    "user_std_rating": 1.3005510771121924
+  },
+  "396": {
+    "gender_enc": 1.0,
+    "age": 35.0,
+    "occupation": 14.0,
+    "user_avg_rating": 3.7205882352941178,
+    "user_n_ratings": 68.0,
+    "user_std_rating": 0.9901844880912553
+  },
+  "397": {
+    "gender_enc": 0.0,
+    "age": 1.0,
+    "occupation": 2.0,
+    "user_avg_rating": 3.838235294117647,
+    "user_n_ratings": 68.0,
+    "user_std_rating": 1.0873807241866795
+  },
+  "398": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 0.0,
+    "user_avg_rating": 3.9444444444444446,
+    "user_n_ratings": 54.0,
+    "user_std_rating": 1.0713536960959087
+  },
+  "399": {
+    "gender_enc": 1.0,
+    "age": 45.0,
+    "occupation": 19.0,
+    "user_avg_rating": 3.676056338028169,
+    "user_n_ratings": 71.0,
+    "user_std_rating": 1.1310506858331069
+  },
+  "400": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 15.0,
+    "user_avg_rating": 3.733333333333333,
+    "user_n_ratings": 60.0,
+    "user_std_rating": 1.0061954971729268
+  },
+  "401": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 1.0,
+    "user_avg_rating": 3.984375,
+    "user_n_ratings": 64.0,
+    "user_std_rating": 0.983872935078993
+  },
+  "402": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 1.0,
+    "user_avg_rating": 3.8983050847457625,
+    "user_n_ratings": 59.0,
+    "user_std_rating": 1.0617960589660187
+  },
+  "403": {
+    "gender_enc": 1.0,
+    "age": 25.0,
+    "occupation": 2.0,
+    "user_avg_rating": 4.028985507246377,
+    "user_n_ratings": 69.0,
+    "user_std_rating": 1.0567850036334343
+  },
+  "404": {
+    "gender_enc": 0.0,
+    "age": 1.0,
+    "occupation": 7.0,
+    "user_avg_rating": 3.492537313432836,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.146445552082454
+  },
+  "405": {
+    "gender_enc": 1.0,
+    "age": 45.0,
+    "occupation": 14.0,
+    "user_avg_rating": 3.7666666666666666,
+    "user_n_ratings": 60.0,
+    "user_std_rating": 1.198398177606423
+  },
+  "406": {
+    "gender_enc": 1.0,
+    "age": 25.0,
+    "occupation": 6.0,
+    "user_avg_rating": 3.925925925925926,
+    "user_n_ratings": 54.0,
+    "user_std_rating": 0.968403702109074
+  },
+  "407": {
+    "gender_enc": 0.0,
+    "age": 25.0,
+    "occupation": 5.0,
+    "user_avg_rating": 3.863636363636364,
+    "user_n_ratings": 66.0,
+    "user_std_rating": 1.1487299158550803
+  },
+  "408": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 8.0,
+    "user_avg_rating": 3.9491525423728815,
+    "user_n_ratings": 59.0,
+    "user_std_rating": 1.0242529458191894
+  },
+  "409": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 19.0,
+    "user_avg_rating": 3.859375,
+    "user_n_ratings": 64.0,
+    "user_std_rating": 0.9405703690036272
+  },
+  "410": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 0.0,
+    "user_avg_rating": 3.7384615384615385,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.0499542114558362
+  },
+  "411": {
+    "gender_enc": 1.0,
+    "age": 45.0,
+    "occupation": 7.0,
+    "user_avg_rating": 3.875,
+    "user_n_ratings": 64.0,
+    "user_std_rating": 1.161553420728616
+  },
+  "412": {
+    "gender_enc": 0.0,
+    "age": 18.0,
+    "occupation": 2.0,
+    "user_avg_rating": 3.6666666666666665,
+    "user_n_ratings": 69.0,
+    "user_std_rating": 1.268007546213705
+  },
+  "413": {
+    "gender_enc": 0.0,
+    "age": 56.0,
+    "occupation": 3.0,
+    "user_avg_rating": 3.681159420289855,
+    "user_n_ratings": 69.0,
+    "user_std_rating": 1.1693733065594478
+  },
+  "414": {
+    "gender_enc": 1.0,
+    "age": 50.0,
+    "occupation": 14.0,
+    "user_avg_rating": 3.8620689655172415,
+    "user_n_ratings": 58.0,
+    "user_std_rating": 1.0833391502473082
+  },
+  "415": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 5.0,
+    "user_avg_rating": 3.7586206896551726,
+    "user_n_ratings": 58.0,
+    "user_std_rating": 1.1441743338456316
+  },
+  "416": {
+    "gender_enc": 0.0,
+    "age": 25.0,
+    "occupation": 14.0,
+    "user_avg_rating": 3.735294117647059,
+    "user_n_ratings": 68.0,
+    "user_std_rating": 1.0596767608930668
+  },
+  "417": {
+    "gender_enc": 1.0,
+    "age": 35.0,
+    "occupation": 20.0,
+    "user_avg_rating": 3.876923076923077,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.1793495599759147
+  },
+  "418": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 2.0,
+    "user_avg_rating": 3.771929824561404,
+    "user_n_ratings": 57.0,
+    "user_std_rating": 1.1183141626645168
+  },
+  "419": {
+    "gender_enc": 1.0,
+    "age": 25.0,
+    "occupation": 20.0,
+    "user_avg_rating": 3.6557377049180326,
+    "user_n_ratings": 61.0,
+    "user_std_rating": 1.2501366045575355
+  },
+  "420": {
+    "gender_enc": 0.0,
+    "age": 56.0,
+    "occupation": 20.0,
+    "user_avg_rating": 3.77027027027027,
+    "user_n_ratings": 74.0,
+    "user_std_rating": 1.24468510951315
+  },
+  "421": {
+    "gender_enc": 1.0,
+    "age": 25.0,
+    "occupation": 13.0,
+    "user_avg_rating": 4.03125,
+    "user_n_ratings": 64.0,
+    "user_std_rating": 0.9422827735859473
+  },
+  "422": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 19.0,
+    "user_avg_rating": 3.75,
+    "user_n_ratings": 68.0,
+    "user_std_rating": 1.1113391142516635
+  },
+  "423": {
+    "gender_enc": 0.0,
+    "age": 25.0,
+    "occupation": 13.0,
+    "user_avg_rating": 3.5625,
+    "user_n_ratings": 64.0,
+    "user_std_rating": 1.3077910614151864
+  },
+  "424": {
+    "gender_enc": 0.0,
+    "age": 25.0,
+    "occupation": 3.0,
+    "user_avg_rating": 3.6666666666666665,
+    "user_n_ratings": 66.0,
+    "user_std_rating": 1.0573309405993556
+  },
+  "425": {
+    "gender_enc": 0.0,
+    "age": 18.0,
+    "occupation": 11.0,
+    "user_avg_rating": 3.723076923076923,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.1251068325343088
+  },
+  "426": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 16.0,
+    "user_avg_rating": 3.761904761904762,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.0428602992187572
+  },
+  "427": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 6.0,
+    "user_avg_rating": 3.983050847457627,
+    "user_n_ratings": 59.0,
+    "user_std_rating": 1.1669519007865188
+  },
+  "428": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 8.0,
+    "user_avg_rating": 3.8133333333333335,
+    "user_n_ratings": 75.0,
+    "user_std_rating": 1.1819970884554314
+  },
+  "429": {
+    "gender_enc": 1.0,
+    "age": 50.0,
+    "occupation": 2.0,
+    "user_avg_rating": 3.742424242424242,
+    "user_n_ratings": 66.0,
+    "user_std_rating": 1.1937092296458651
+  },
+  "430": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 12.0,
+    "user_avg_rating": 3.877192982456141,
+    "user_n_ratings": 57.0,
+    "user_std_rating": 1.0702165241301889
+  },
+  "431": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 14.0,
+    "user_avg_rating": 3.8135593220338975,
+    "user_n_ratings": 59.0,
+    "user_std_rating": 1.0582121596676624
+  },
+  "432": {
+    "gender_enc": 0.0,
+    "age": 56.0,
+    "occupation": 17.0,
+    "user_avg_rating": 3.791044776119403,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.066533799956462
+  },
+  "433": {
+    "gender_enc": 1.0,
+    "age": 35.0,
+    "occupation": 18.0,
+    "user_avg_rating": 3.60655737704918,
+    "user_n_ratings": 61.0,
+    "user_std_rating": 1.228531488194885
+  },
+  "434": {
+    "gender_enc": 0.0,
+    "age": 1.0,
+    "occupation": 0.0,
+    "user_avg_rating": 3.815384615384616,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.1304355865703344
+  },
+  "435": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 5.0,
+    "user_avg_rating": 3.969230769230769,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 0.9514664794612898
+  },
+  "436": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 1.0,
+    "user_avg_rating": 3.689189189189189,
+    "user_n_ratings": 74.0,
+    "user_std_rating": 1.1094324808074467
+  },
+  "437": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 13.0,
+    "user_avg_rating": 3.519230769230769,
+    "user_n_ratings": 52.0,
+    "user_std_rating": 1.0934813018365075
+  },
+  "438": {
+    "gender_enc": 0.0,
+    "age": 18.0,
+    "occupation": 5.0,
+    "user_avg_rating": 4.070422535211268,
+    "user_n_ratings": 71.0,
+    "user_std_rating": 1.0187379259508422
+  },
+  "439": {
+    "gender_enc": 0.0,
+    "age": 56.0,
+    "occupation": 13.0,
+    "user_avg_rating": 3.642857142857143,
+    "user_n_ratings": 56.0,
+    "user_std_rating": 1.1973997802598069
+  },
+  "440": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 3.0,
+    "user_avg_rating": 3.936507936507936,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.1198072396480805
+  },
+  "441": {
+    "gender_enc": 1.0,
+    "age": 25.0,
+    "occupation": 20.0,
+    "user_avg_rating": 3.6666666666666665,
+    "user_n_ratings": 66.0,
+    "user_std_rating": 1.1810469062961872
+  },
+  "442": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 7.0,
+    "user_avg_rating": 3.661290322580645,
+    "user_n_ratings": 62.0,
+    "user_std_rating": 1.2667701071997934
+  },
+  "443": {
+    "gender_enc": 1.0,
+    "age": 35.0,
+    "occupation": 2.0,
+    "user_avg_rating": 3.8333333333333335,
+    "user_n_ratings": 60.0,
+    "user_std_rating": 1.1374468386410257
+  },
+  "444": {
+    "gender_enc": 1.0,
+    "age": 50.0,
+    "occupation": 18.0,
+    "user_avg_rating": 3.791044776119403,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.1875275235449674
+  },
+  "445": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 13.0,
+    "user_avg_rating": 3.931034482758621,
+    "user_n_ratings": 58.0,
+    "user_std_rating": 0.9887448887000274
+  },
+  "446": {
+    "gender_enc": 1.0,
+    "age": 50.0,
+    "occupation": 19.0,
+    "user_avg_rating": 3.754385964912281,
+    "user_n_ratings": 57.0,
+    "user_std_rating": 1.056961645377683
+  },
+  "447": {
+    "gender_enc": 0.0,
+    "age": 1.0,
+    "occupation": 16.0,
+    "user_avg_rating": 3.643835616438356,
+    "user_n_ratings": 73.0,
+    "user_std_rating": 1.2513311025297402
+  },
+  "448": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 7.0,
+    "user_avg_rating": 4.065573770491803,
+    "user_n_ratings": 61.0,
+    "user_std_rating": 0.8340434133188429
+  },
+  "449": {
+    "gender_enc": 0.0,
+    "age": 1.0,
+    "occupation": 13.0,
+    "user_avg_rating": 3.6666666666666665,
+    "user_n_ratings": 57.0,
+    "user_std_rating": 1.2001983962979583
+  },
+  "450": {
+    "gender_enc": 0.0,
+    "age": 18.0,
+    "occupation": 5.0,
+    "user_avg_rating": 3.895522388059701,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.046412751842433
+  },
+  "451": {
+    "gender_enc": 0.0,
+    "age": 56.0,
+    "occupation": 15.0,
+    "user_avg_rating": 4.046153846153846,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 0.9425823775466728
+  },
+  "452": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 18.0,
+    "user_avg_rating": 3.6507936507936503,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.233389378890153
+  },
+  "453": {
+    "gender_enc": 0.0,
+    "age": 56.0,
+    "occupation": 13.0,
+    "user_avg_rating": 3.6417910447761193,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.202289388565824
+  },
+  "454": {
+    "gender_enc": 0.0,
+    "age": 18.0,
+    "occupation": 18.0,
+    "user_avg_rating": 3.8545454545454554,
+    "user_n_ratings": 55.0,
+    "user_std_rating": 1.0614138338081551
+  },
+  "455": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 2.0,
+    "user_avg_rating": 3.73015873015873,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.259881576697424
+  },
+  "456": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 9.0,
+    "user_avg_rating": 3.859154929577465,
+    "user_n_ratings": 71.0,
+    "user_std_rating": 1.0183428365716434
+  },
+  "457": {
+    "gender_enc": 1.0,
+    "age": 35.0,
+    "occupation": 18.0,
+    "user_avg_rating": 3.734375,
+    "user_n_ratings": 64.0,
+    "user_std_rating": 1.0873323625583242
+  },
+  "458": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 8.0,
+    "user_avg_rating": 3.9272727272727272,
+    "user_n_ratings": 55.0,
+    "user_std_rating": 0.9594470910575114
+  },
+  "459": {
+    "gender_enc": 0.0,
+    "age": 25.0,
+    "occupation": 19.0,
+    "user_avg_rating": 3.809523809523809,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.1480297688781482
+  },
+  "460": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 12.0,
+    "user_avg_rating": 3.618181818181818,
+    "user_n_ratings": 55.0,
+    "user_std_rating": 1.1465069186350838
+  },
+  "461": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 6.0,
+    "user_avg_rating": 3.7058823529411766,
+    "user_n_ratings": 68.0,
+    "user_std_rating": 1.1977444415010323
+  },
+  "462": {
+    "gender_enc": 1.0,
+    "age": 45.0,
+    "occupation": 13.0,
+    "user_avg_rating": 3.880597014925373,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.1081295742485566
+  },
+  "463": {
+    "gender_enc": 1.0,
+    "age": 45.0,
+    "occupation": 8.0,
+    "user_avg_rating": 3.613333333333333,
+    "user_n_ratings": 75.0,
+    "user_std_rating": 1.0766983232453176
+  },
+  "464": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 18.0,
+    "user_avg_rating": 3.763888888888889,
+    "user_n_ratings": 72.0,
+    "user_std_rating": 1.1566471159609224
+  },
+  "465": {
+    "gender_enc": 1.0,
+    "age": 35.0,
+    "occupation": 14.0,
+    "user_avg_rating": 3.8333333333333335,
+    "user_n_ratings": 66.0,
+    "user_std_rating": 1.0463612162498162
+  },
+  "466": {
+    "gender_enc": 0.0,
+    "age": 18.0,
+    "occupation": 19.0,
+    "user_avg_rating": 3.634920634920635,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.2738256742734857
+  },
+  "467": {
+    "gender_enc": 0.0,
+    "age": 25.0,
+    "occupation": 13.0,
+    "user_avg_rating": 3.771929824561404,
+    "user_n_ratings": 57.0,
+    "user_std_rating": 1.253816229694213
+  },
+  "468": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 5.0,
+    "user_avg_rating": 3.634920634920635,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.22212912180906
+  },
+  "469": {
+    "gender_enc": 0.0,
+    "age": 56.0,
+    "occupation": 20.0,
+    "user_avg_rating": 3.6231884057971016,
+    "user_n_ratings": 69.0,
+    "user_std_rating": 1.2614353318082483
+  },
+  "470": {
+    "gender_enc": 0.0,
+    "age": 1.0,
+    "occupation": 3.0,
+    "user_avg_rating": 3.807017543859649,
+    "user_n_ratings": 57.0,
+    "user_std_rating": 0.9717178546123516
+  },
+  "471": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 7.0,
+    "user_avg_rating": 3.7,
+    "user_n_ratings": 60.0,
+    "user_std_rating": 1.154211154785167
+  },
+  "472": {
+    "gender_enc": 0.0,
+    "age": 56.0,
+    "occupation": 16.0,
+    "user_avg_rating": 3.857142857142857,
+    "user_n_ratings": 70.0,
+    "user_std_rating": 0.9673767649592494
+  },
+  "473": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 8.0,
+    "user_avg_rating": 3.588235294117647,
+    "user_n_ratings": 68.0,
+    "user_std_rating": 1.224565644805221
+  },
+  "474": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 0.0,
+    "user_avg_rating": 3.656716417910448,
+    "user_n_ratings": 67.0,
+    "user_std_rating": 1.261939810382967
+  },
+  "475": {
+    "gender_enc": 0.0,
+    "age": 25.0,
+    "occupation": 19.0,
+    "user_avg_rating": 3.629032258064516,
+    "user_n_ratings": 62.0,
+    "user_std_rating": 1.2042802212946015
+  },
+  "476": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 13.0,
+    "user_avg_rating": 3.7285714285714286,
+    "user_n_ratings": 70.0,
+    "user_std_rating": 1.1153920292354558
+  },
+  "477": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 10.0,
+    "user_avg_rating": 3.7413793103448274,
+    "user_n_ratings": 58.0,
+    "user_std_rating": 1.1326160500175737
+  },
+  "478": {
+    "gender_enc": 1.0,
+    "age": 18.0,
+    "occupation": 20.0,
+    "user_avg_rating": 3.7,
+    "user_n_ratings": 60.0,
+    "user_std_rating": 0.907595071361299
+  },
+  "479": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 2.0,
+    "user_avg_rating": 3.809523809523809,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.1050783486622238
+  },
+  "480": {
+    "gender_enc": 0.0,
+    "age": 18.0,
+    "occupation": 8.0,
+    "user_avg_rating": 3.7285714285714286,
+    "user_n_ratings": 70.0,
+    "user_std_rating": 1.0757057484009542
+  },
+  "481": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 13.0,
+    "user_avg_rating": 3.7903225806451615,
+    "user_n_ratings": 62.0,
+    "user_std_rating": 1.02648687476846
+  },
+  "482": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 8.0,
+    "user_avg_rating": 3.8615384615384616,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.0439846005348197
+  },
+  "483": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 3.0,
+    "user_avg_rating": 3.8813559322033897,
+    "user_n_ratings": 59.0,
+    "user_std_rating": 1.0681073458049422
+  },
+  "484": {
+    "gender_enc": 1.0,
+    "age": 35.0,
+    "occupation": 3.0,
+    "user_avg_rating": 3.80327868852459,
+    "user_n_ratings": 61.0,
+    "user_std_rating": 1.0926980694767656
+  },
+  "485": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 7.0,
+    "user_avg_rating": 3.9,
+    "user_n_ratings": 60.0,
+    "user_std_rating": 1.1000770389047414
+  },
+  "486": {
+    "gender_enc": 1.0,
+    "age": 35.0,
+    "occupation": 1.0,
+    "user_avg_rating": 3.701754385964912,
+    "user_n_ratings": 57.0,
+    "user_std_rating": 1.1947042712484743
+  },
+  "487": {
+    "gender_enc": 1.0,
+    "age": 25.0,
+    "occupation": 8.0,
+    "user_avg_rating": 3.632352941176471,
+    "user_n_ratings": 68.0,
+    "user_std_rating": 1.049582884665268
+  },
+  "488": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 13.0,
+    "user_avg_rating": 3.8596491228070176,
+    "user_n_ratings": 57.0,
+    "user_std_rating": 0.9717178546123516
+  },
+  "489": {
+    "gender_enc": 0.0,
+    "age": 1.0,
+    "occupation": 8.0,
+    "user_avg_rating": 3.585714285714286,
+    "user_n_ratings": 70.0,
+    "user_std_rating": 1.3131757848140313
+  },
+  "490": {
+    "gender_enc": 0.0,
+    "age": 45.0,
+    "occupation": 15.0,
+    "user_avg_rating": 3.8125,
+    "user_n_ratings": 64.0,
+    "user_std_rating": 1.1109126806941143
+  },
+  "491": {
+    "gender_enc": 1.0,
+    "age": 25.0,
+    "occupation": 16.0,
+    "user_avg_rating": 3.838709677419355,
+    "user_n_ratings": 62.0,
+    "user_std_rating": 1.0432224412233593
+  },
+  "492": {
+    "gender_enc": 0.0,
+    "age": 18.0,
+    "occupation": 15.0,
+    "user_avg_rating": 3.8285714285714287,
+    "user_n_ratings": 70.0,
+    "user_std_rating": 1.0351983436839751
+  },
+  "493": {
+    "gender_enc": 0.0,
+    "age": 50.0,
+    "occupation": 11.0,
+    "user_avg_rating": 3.870967741935484,
+    "user_n_ratings": 62.0,
+    "user_std_rating": 1.1085934223111458
+  },
+  "494": {
+    "gender_enc": 1.0,
+    "age": 56.0,
+    "occupation": 2.0,
+    "user_avg_rating": 3.952380952380953,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.0690449676496978
+  },
+  "495": {
+    "gender_enc": 0.0,
+    "age": 56.0,
+    "occupation": 10.0,
+    "user_avg_rating": 3.830769230769231,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.1933308265265177
+  },
+  "496": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 13.0,
+    "user_avg_rating": 4.031746031746032,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 0.9327077121988908
+  },
+  "497": {
+    "gender_enc": 0.0,
+    "age": 35.0,
+    "occupation": 17.0,
+    "user_avg_rating": 4.015873015873016,
+    "user_n_ratings": 63.0,
+    "user_std_rating": 1.0997369699022534
+  },
+  "498": {
+    "gender_enc": 1.0,
+    "age": 1.0,
+    "occupation": 20.0,
+    "user_avg_rating": 3.707692307692308,
+    "user_n_ratings": 65.0,
+    "user_std_rating": 1.246533655320286
+  },
+  "499": {
+    "gender_enc": 0.0,
+    "age": 56.0,
+    "occupation": 20.0,
+    "user_avg_rating": 3.864406779661017,
+    "user_n_ratings": 59.0,
+    "user_std_rating": 0.955160703551196
+  },
+  "500": {
+    "gender_enc": 0.0,
+    "age": 18.0,
+    "occupation": 4.0,
+    "user_avg_rating": 3.9516129032258074,
+    "user_n_ratings": 62.0,
+    "user_std_rating": 0.9654255725969868
+  }
+}

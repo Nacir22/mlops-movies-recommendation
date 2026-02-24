@@ -1,0 +1,19 @@
+project: movielens_recommender
+registry: data/feast/registry.db
+provider: local
+
+offline_store:
+  type: file
+  # En production : pointer vers MinIO (S3)
+  # type: s3
+  # s3_endpoint_override: http://minio:9000
+  # bucket: raw-data
+
+online_store:
+  type: redis
+  connection_string: "${FEAST_REDIS_HOST:-localhost}:${FEAST_REDIS_PORT:-6379}"
+  # En développement local sans Redis, utiliser :
+  # type: sqlite
+  # path: data/feast/online_store.db
+
+entity_key_serialization_version: 2

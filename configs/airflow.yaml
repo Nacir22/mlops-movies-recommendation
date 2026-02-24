@@ -1,0 +1,59 @@
+# configs/airflow.yaml
+# Configuration Airflow pour le projet MovieLens MLOps
+
+webserver:
+  base_url:            "http://localhost:8080"
+  expose_config:       true
+  rbac:                true
+  default_ui_timezone: "Europe/Paris"
+
+core:
+  executor:                  LocalExecutor
+  load_examples:             false
+  dags_folder:               /opt/airflow/dags
+  parallelism:               8
+  max_active_tasks_per_dag:  4
+
+database:
+  sql_alchemy_conn: "${AIRFLOW__DATABASE__SQL_ALCHEMY_CONN}"
+
+scheduler:
+  min_file_process_interval: 30
+  catchup_by_default:        false
+
+dags:
+  movielens_ingestion:
+    schedule:    "0 2 * * *"
+    description: "Ingestion MovieLens → MinIO + préparation features"
+
+  feast_materialization:
+    schedule:    "30 2 * * *"
+    description: "Offline → Online store (Redis) via Feast"
+
+  trigger_kubeflow_training:
+    schedule:    "0 4 * * 1"
+    description: "Déclenchement conditionnel du ré-entraînement"
+
+connections:
+  minio_s3:
+    conn_id:   minio_s3
+    conn_type: aws
+    host:      "${MINIO_ENDPOINT}"
+    login:     "${MINIO_ACCESS_KEY}"
+    password:  "${MINIO_SECRET_KEY}"
+  redis_default:
+    conn_id:   redis_default
+    conn_type: redis
+    host:      "${FEAST_REDIS_HOST}"
+    port:      6379
+
+variables:
+  drift_threshold: "0.3"
+  min_accuracy:    "0.60"
+  model_name:      "naive-bayes-recommender"
+
+smtp:
+  smtp_host:      smtp.gmail.com
+  smtp_port:      587
+  smtp_starttls:  true
+  smtp_mail_from: mlops-alerts@movielens.com

@@ -1,0 +1,20 @@
+# Environnement
+.env
+*.pyc
+__pycache__/
+.venv/
+*.egg-info/
+
+# Données (ne jamais committer les données brutes volumineuses)
+data/raw/*.dat
+data/processed/
+models/*.pkl
+
+# Logs
+mlflow.db
+mlruns/
+
+# IDE
+.vscode/
+.idea/
+*.DS_Store

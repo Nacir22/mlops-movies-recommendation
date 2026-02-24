@@ -1,0 +1,23 @@
+# configs/mlflow.yaml
+# Configuration MLflow pour le projet MovieLens Recommender
+
+tracking:
+  uri:             "${MLFLOW_TRACKING_URI}"   # http://localhost:5000
+  experiment_name: "${MLFLOW_EXPERIMENT_NAME}" # movielens-recommender
+
+artifact_store:
+  # MinIO via protocole S3
+  s3_endpoint_url: "${MLFLOW_S3_ENDPOINT_URL}" # http://localhost:9000
+  bucket:          "mlflow-artifacts"
+
+model_registry:
+  model_name:  "${MODEL_NAME}"   # naive-bayes-recommender
+  stage_dev:   "Staging"
+  stage_prod:  "Production"
+
+# Seuils de validation avant promotion
+thresholds:
+  min_accuracy: 0.60
+  min_f1:       0.50
+  min_roc_auc:  0.55
+  max_cv_std:   0.05
