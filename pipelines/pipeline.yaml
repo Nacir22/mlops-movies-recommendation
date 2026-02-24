@@ -1,0 +1,225 @@
+# pipelines/pipeline.yaml
+# Pipeline Kubeflow compilé — MovieLens Naïve Bayes Recommender
+# Généré par : python pipelines/pipeline.py --compile
+# Version KFP : 2.x  |  Format : IR YAML v1
+
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: movielens-naive-bayes-pipeline-
+  annotations:
+    pipelines.kubeflow.org/kfp_sdk_version: "2.0.0"
+    pipelines.kubeflow.org/pipeline_compilation_time: "2024-01-15T10:00:00"
+    pipelines.kubeflow.org/pipeline_spec: |
+      {
+        "name": "movielens-naive-bayes-pipeline",
+        "description": "Pipeline Naïve Bayes pour MovieLens 1M"
+      }
+
+spec:
+  entrypoint: movielens-naive-bayes-pipeline
+  arguments:
+    parameters:
+      - name: gaussian_var_smoothing
+        value: "0.01"
+      - name: bernoulli_alpha
+        value: "1.0"
+      - name: gaussian_weight
+        value: "0.6"
+      - name: bernoulli_weight
+        value: "0.4"
+      - name: test_size
+        value: "0.2"
+      - name: random_state
+        value: "42"
+      - name: min_accuracy
+        value: "0.60"
+      - name: mlflow_tracking_uri
+        value: "http://mlflow:5000"
+      - name: experiment_name
+        value: "movielens-recommender"
+      - name: minio_endpoint
+        value: "http://minio:9000"
+      - name: minio_bucket
+        value: "raw-data"
+
+  templates:
+    # ── Template principal ────────────────────────────────────────
+    - name: movielens-naive-bayes-pipeline
+      dag:
+        tasks:
+          - name: prepare-data
+            template: prepare-data-component
+            arguments:
+              parameters:
+                - name: test_size
+                  value: "{{workflow.parameters.test_size}}"
+                - name: random_state
+                  value: "{{workflow.parameters.random_state}}"
+                - name: minio_endpoint
+                  value: "{{workflow.parameters.minio_endpoint}}"
+                - name: minio_bucket
+                  value: "{{workflow.parameters.minio_bucket}}"
+
+          - name: train-model
+            template: train-model-component
+            dependencies: [prepare-data]
+            arguments:
+              parameters:
+                - name: gaussian_var_smoothing
+                  value: "{{workflow.parameters.gaussian_var_smoothing}}"
+                - name: bernoulli_alpha
+                  value: "{{workflow.parameters.bernoulli_alpha}}"
+                - name: gaussian_weight
+                  value: "{{workflow.parameters.gaussian_weight}}"
+                - name: bernoulli_weight
+                  value: "{{workflow.parameters.bernoulli_weight}}"
+                - name: mlflow_tracking_uri
+                  value: "{{workflow.parameters.mlflow_tracking_uri}}"
+                - name: experiment_name
+                  value: "{{workflow.parameters.experiment_name}}"
+              artifacts:
+                - name: x_train_in
+                  from: "{{tasks.prepare-data.outputs.artifacts.x_train_out}}"
+                - name: y_train_in
+                  from: "{{tasks.prepare-data.outputs.artifacts.y_train_out}}"
+                - name: feature_cols_in
+                  from: "{{tasks.prepare-data.outputs.artifacts.feature_cols_out}}"
+
+          - name: evaluate-model
+            template: evaluate-model-component
+            dependencies: [prepare-data, train-model]
+            arguments:
+              parameters:
+                - name: min_accuracy
+                  value: "{{workflow.parameters.min_accuracy}}"
+                - name: mlflow_tracking_uri
+                  value: "{{workflow.parameters.mlflow_tracking_uri}}"
+              artifacts:
+                - name: x_test_in
+                  from: "{{tasks.prepare-data.outputs.artifacts.x_test_out}}"
+                - name: y_test_in
+                  from: "{{tasks.prepare-data.outputs.artifacts.y_test_out}}"
+                - name: model_input
+                  from: "{{tasks.train-model.outputs.artifacts.model_output}}"
+                - name: feature_cols_in
+                  from: "{{tasks.prepare-data.outputs.artifacts.feature_cols_out}}"
+
+    # ── Composant 1 : prepare_data ────────────────────────────────
+    - name: prepare-data-component
+      inputs:
+        parameters:
+          - name: test_size
+          - name: random_state
+          - name: minio_endpoint
+          - name: minio_bucket
+      outputs:
+        artifacts:
+          - name: x_train_out
+            path: /tmp/outputs/x_train.csv
+          - name: x_test_out
+            path: /tmp/outputs/x_test.csv
+          - name: y_train_out
+            path: /tmp/outputs/y_train.csv
+          - name: y_test_out
+            path: /tmp/outputs/y_test.csv
+          - name: feature_cols_out
+            path: /tmp/outputs/feature_columns.json
+      container:
+        image: python:3.10-slim
+        command: [python, -c]
+        args:
+          - |
+            import subprocess, sys
+            subprocess.run([sys.executable, "-m", "pip", "install",
+                           "scikit-learn", "pandas", "numpy", "boto3"], check=True)
+            # Script inline (en prod : monter le code du projet)
+            from pipelines.components.prepare_data import prepare_data_local
+            prepare_data_local(
+                test_size={{inputs.parameters.test_size}},
+                random_state={{inputs.parameters.random_state}},
+                output_dir="/tmp/outputs"
+            )
+        resources:
+          requests:
+            cpu: "500m"
+            memory: "512Mi"
+          limits:
+            cpu: "1000m"
+            memory: "1Gi"
+
+    # ── Composant 2 : train_model ─────────────────────────────────
+    - name: train-model-component
+      inputs:
+        parameters:
+          - name: gaussian_var_smoothing
+          - name: bernoulli_alpha
+          - name: gaussian_weight
+          - name: bernoulli_weight
+          - name: mlflow_tracking_uri
+          - name: experiment_name
+        artifacts:
+          - name: x_train_in
+            path: /tmp/inputs/x_train.csv
+          - name: y_train_in
+            path: /tmp/inputs/y_train.csv
+          - name: feature_cols_in
+            path: /tmp/inputs/feature_columns.json
+      outputs:
+        artifacts:
+          - name: model_output
+            path: /tmp/outputs/model/
+      container:
+        image: python:3.10-slim
+        command: [python, -c]
+        args:
+          - |
+            from pipelines.components.train_model import train_model_local
+            train_model_local(
+                gaussian_var_smoothing={{inputs.parameters.gaussian_var_smoothing}},
+                bernoulli_alpha={{inputs.parameters.bernoulli_alpha}},
+                gaussian_weight={{inputs.parameters.gaussian_weight}},
+                bernoulli_weight={{inputs.parameters.bernoulli_weight}},
+                data_dir="/tmp/inputs",
+                output_dir="/tmp/outputs/model",
+                mlflow_uri="{{inputs.parameters.mlflow_tracking_uri}}"
+            )
+        resources:
+          requests:
+            cpu: "1000m"
+            memory: "1Gi"
+          limits:
+            cpu: "2000m"
+            memory: "2Gi"
+
+    # ── Composant 3 : evaluate_model ──────────────────────────────
+    - name: evaluate-model-component
+      inputs:
+        parameters:
+          - name: min_accuracy
+          - name: mlflow_tracking_uri
+        artifacts:
+          - name: x_test_in
+            path: /tmp/inputs/x_test.csv
+          - name: y_test_in
+            path: /tmp/inputs/y_test.csv
+          - name: model_input
+            path: /tmp/inputs/model/
+          - name: feature_cols_in
+            path: /tmp/inputs/feature_columns.json
+      container:
+        image: python:3.10-slim
+        command: [python, -c]
+        args:
+          - |
+            from pipelines.components.evaluate_model import evaluate_model_local
+            metrics = evaluate_model_local(
+                min_accuracy={{inputs.parameters.min_accuracy}},
+                data_dir="/tmp/inputs",
+                model_path="/tmp/inputs/model/kfp_model.pkl"
+            )
+            print("Métriques finales :", metrics)
+        resources:
+          requests:
+            cpu: "500m"
+            memory: "512Mi"
