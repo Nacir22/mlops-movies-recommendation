@@ -159,7 +159,7 @@ jobs:
             --experiment-name        "ci-retrain-${{ github.run_id }}"
 
       - name: Uploader le modèle entraîné
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: trained-model
           path: models/naive_bayes_recommender.pkl
@@ -251,7 +251,7 @@ jobs:
           MIN_ACCURACY: ${{ env.MIN_ACCURACY }}
 
       - name: Uploader les métriques
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: evaluation-metrics
           path: metrics.json
