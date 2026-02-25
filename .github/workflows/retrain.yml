@@ -57,7 +57,7 @@ jobs:
       drift-score:    ${{ steps.drift.outputs.drift_score }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - uses: actions/setup-python@v5
         with:
@@ -132,7 +132,7 @@ jobs:
     if: needs.check-drift.outputs.should-retrain == 'true'
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - uses: actions/setup-python@v5
         with:
@@ -177,7 +177,7 @@ jobs:
       promoted:  ${{ steps.eval.outputs.promoted }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - uses: actions/setup-python@v5
         with:
@@ -274,7 +274,7 @@ jobs:
     if: needs.evaluate-model.outputs.promoted == 'true'
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - uses: actions/setup-python@v5
         with:
