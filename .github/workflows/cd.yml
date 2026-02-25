@@ -49,7 +49,7 @@ jobs:
       version:      ${{ steps.version.outputs.version }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Calculer la version
         id: version
@@ -116,7 +116,7 @@ jobs:
       url:  https://api-staging.movielens.internal
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Configurer kubectl
         uses: azure/setup-kubectl@v4
@@ -159,7 +159,7 @@ jobs:
       name: staging
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - uses: actions/setup-python@v5
         with:
@@ -211,7 +211,7 @@ jobs:
       url:  https://api.movielens.internal
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Configurer kubectl
         uses: azure/setup-kubectl@v4
@@ -268,7 +268,7 @@ jobs:
       name: production
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - uses: actions/setup-python@v5
         with:
