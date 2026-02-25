@@ -1,0 +1,323 @@
+# .github/workflows/cd.yml
+# Workflow CD — Déploiement continu
+#
+# Déclenché par :
+#   - Push sur main (après merge PR) → déploie en staging automatiquement
+#   - Tag v*.*.* → déploie en production avec approbation manuelle
+#
+# Pipeline :
+#   build-docker ──→ push-registry
+#                         ↓
+#                    deploy-staging ──→ smoke-test-staging
+#                         ↓ (tag uniquement + approbation)
+#                    deploy-production ──→ smoke-test-prod
+
+name: CD — Build & Deploy
+
+on:
+  push:
+    branches: [main]
+    tags:     ["v*.*.*"]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Environnement cible"
+        required: true
+        default:  staging
+        type: choice
+        options: [staging, production]
+      force_rebuild:
+        description: "Forcer le rebuild Docker"
+        required: false
+        default: "false"
+        type: boolean
+
+env:
+  PYTHON_VERSION:  "3.10"
+  REGISTRY:        ghcr.io
+  IMAGE_NAME:      ${{ github.repository_owner }}/movielens-api
+  KUBE_NAMESPACE:  mlops
+
+jobs:
+  # ── 1. Build et push de l'image Docker ──────────────────────────────────
+  build-docker:
+    name: Build Docker Image
+    runs-on: ubuntu-22.04
+    outputs:
+      image-tag:    ${{ steps.meta.outputs.tags }}
+      image-digest: ${{ steps.build.outputs.digest }}
+      version:      ${{ steps.version.outputs.version }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Calculer la version
+        id: version
+        run: |
+          if [[ "${{ github.ref }}" == refs/tags/* ]]; then
+            VERSION="${{ github.ref_name }}"
+          else
+            VERSION="sha-$(echo ${{ github.sha }} | cut -c1-8)"
+          fi
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Version : $VERSION"
+
+      - name: Configurer Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login sur GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extraire les métadonnées Docker
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=ref,event=branch
+            type=ref,event=tag
+            type=sha,prefix=sha-,format=short
+            type=raw,value=latest,enable=${{ github.ref == 'refs/heads/main' }}
+
+      - name: Build et push l'image
+        id: build
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file:    infrastructure/docker/fastapi/Dockerfile
+          push:    true
+          tags:    ${{ steps.meta.outputs.tags }}
+          labels:  ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to:   type=gha,mode=max
+          build-args: |
+            VERSION=${{ steps.version.outputs.version }}
+            BUILD_DATE=${{ github.event.head_commit.timestamp }}
+            GIT_SHA=${{ github.sha }}
+
+      - name: Résumé du build
+        run: |
+          echo "## 🐳 Image Docker construite" >> $GITHUB_STEP_SUMMARY
+          echo "- **Image** : \`${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- **Version** : \`${{ steps.version.outputs.version }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- **Digest** : \`${{ steps.build.outputs.digest }}\`" >> $GITHUB_STEP_SUMMARY
+
+  # ── 2. Déploiement Staging ───────────────────────────────────────────────
+  deploy-staging:
+    name: Deploy → Staging
+    runs-on: ubuntu-22.04
+    needs: build-docker
+    environment:
+      name: staging
+      url:  https://api-staging.movielens.internal
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configurer kubectl
+        uses: azure/setup-kubectl@v4
+        with:
+          version: v1.29.0
+
+      - name: Configurer le contexte Kubernetes (staging)
+        run: |
+          echo "${{ secrets.KUBE_CONFIG_STAGING }}" | base64 -d > /tmp/kubeconfig
+          echo "KUBECONFIG=/tmp/kubeconfig" >> $GITHUB_ENV
+
+      - name: Mettre à jour l'image dans le déploiement
+        run: |
+          IMAGE="${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:sha-$(echo ${{ github.sha }} | cut -c1-8)"
+          echo "Déploiement de l'image : $IMAGE"
+
+          kubectl set image deployment/movielens-api \
+            api="$IMAGE" \
+            -n ${{ env.KUBE_NAMESPACE }}-staging
+
+      - name: Attendre le rollout
+        run: |
+          kubectl rollout status deployment/movielens-api \
+            -n ${{ env.KUBE_NAMESPACE }}-staging \
+            --timeout=120s
+
+      - name: Vérifier les pods
+        run: |
+          kubectl get pods \
+            -n ${{ env.KUBE_NAMESPACE }}-staging \
+            -l app=movielens-api \
+            -o wide
+
+  # ── 3. Smoke tests Staging ───────────────────────────────────────────────
+  smoke-test-staging:
+    name: Smoke Tests (Staging)
+    runs-on: ubuntu-22.04
+    needs: deploy-staging
+    environment:
+      name: staging
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Installer les dépendances de test
+        run: pip install pytest requests --quiet
+
+      - name: Attendre que l'API soit prête
+        run: |
+          API_URL="${{ secrets.STAGING_API_URL }}"
+          echo "Test de l'API : $API_URL"
+          for i in $(seq 1 12); do
+            if curl -sf "$API_URL/health" > /dev/null 2>&1; then
+              echo "✅ API opérationnelle après ${i}x5s"
+              break
+            fi
+            echo "Attente... tentative $i/12"
+            sleep 5
+          done
+
+      - name: Smoke tests (contrats d'interface)
+        env:
+          TEST_API_URL: ${{ secrets.STAGING_API_URL }}
+        run: |
+          pytest tests/api/ \
+            -v --tb=short \
+            -m "not slow" \
+            --junitxml=results-smoke-staging.xml
+
+      - name: Publier les résultats
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: smoke-staging-results
+          path: results-smoke-staging.xml
+
+  # ── 4. Déploiement Production (tag uniquement + approbation) ─────────────
+  deploy-production:
+    name: Deploy → Production
+    runs-on: ubuntu-22.04
+    needs: smoke-test-staging
+    # Uniquement sur tag v*.*.* ou déclenchement manuel en prod
+    if: |
+      startsWith(github.ref, 'refs/tags/v') ||
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'production')
+    environment:
+      name: production          # Requiert approbation manuelle dans GitHub
+      url:  https://api.movielens.internal
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configurer kubectl
+        uses: azure/setup-kubectl@v4
+        with:
+          version: v1.29.0
+
+      - name: Configurer le contexte Kubernetes (production)
+        run: |
+          echo "${{ secrets.KUBE_CONFIG_PRODUCTION }}" | base64 -d > /tmp/kubeconfig
+          echo "KUBECONFIG=/tmp/kubeconfig" >> $GITHUB_ENV
+
+      - name: Déploiement blue-green
+        run: |
+          VERSION="${{ needs.build-docker.outputs.version }}"
+          IMAGE="${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:$VERSION"
+          echo "🚀 Déploiement production : $IMAGE"
+
+          # Mettre à jour l'image
+          kubectl set image deployment/movielens-api \
+            api="$IMAGE" \
+            -n ${{ env.KUBE_NAMESPACE }}
+
+          # Attendre le rollout avec timeout 5 min
+          kubectl rollout status deployment/movielens-api \
+            -n ${{ env.KUBE_NAMESPACE }} \
+            --timeout=300s
+
+      - name: Rollback automatique si échec
+        if: failure()
+        run: |
+          echo "⚠️  Déploiement échoué — rollback en cours..."
+          kubectl rollout undo deployment/movielens-api \
+            -n ${{ env.KUBE_NAMESPACE }}
+          kubectl rollout status deployment/movielens-api \
+            -n ${{ env.KUBE_NAMESPACE }} \
+            --timeout=120s
+          echo "✅ Rollback effectué"
+
+      - name: Résumé du déploiement
+        if: success()
+        run: |
+          echo "## 🚀 Déploiement Production réussi" >> $GITHUB_STEP_SUMMARY
+          echo "- **Version** : \`${{ needs.build-docker.outputs.version }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- **URL** : https://api.movielens.internal" >> $GITHUB_STEP_SUMMARY
+          echo "- **Timestamp** : $(date -u +"%Y-%m-%dT%H:%M:%SZ")" >> $GITHUB_STEP_SUMMARY
+
+  # ── 5. Smoke tests Production ────────────────────────────────────────────
+  smoke-test-production:
+    name: Smoke Tests (Production)
+    runs-on: ubuntu-22.04
+    needs: deploy-production
+    if: success()
+    environment:
+      name: production
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Installer les dépendances
+        run: pip install pytest requests --quiet
+
+      - name: Smoke tests production
+        env:
+          TEST_API_URL: ${{ secrets.PRODUCTION_API_URL }}
+        run: |
+          pytest tests/api/ \
+            -v --tb=short \
+            -k "health or recommend" \
+            --junitxml=results-smoke-prod.xml
+
+      - name: Notifier Slack en cas de succès
+        if: success()
+        uses: slackapi/slack-github-action@v1.26.0
+        with:
+          payload: |
+            {
+              "text": "✅ *Déploiement production réussi*",
+              "blocks": [{
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "✅ *MovieLens API* déployé en production\n*Version* : `${{ needs.build-docker.outputs.version }}`\n*Commit* : `${{ github.sha }}`"
+                }
+              }]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+      - name: Notifier Slack en cas d'échec
+        if: failure()
+        uses: slackapi/slack-github-action@v1.26.0
+        with:
+          payload: |
+            {
+              "text": "❌ *Smoke tests production échoués* — intervention requise",
+              "blocks": [{
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "❌ *Smoke tests échoués* après déploiement production\n*Version* : `${{ needs.build-docker.outputs.version }}`\n*Run* : ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                }
+              }]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}

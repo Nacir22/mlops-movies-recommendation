@@ -1,0 +1,37 @@
+# CODEOWNERS — Responsables de chaque partie du projet
+# Syntaxe : <pattern>  <@owner ou @team>
+# Le dernier pattern applicable l'emporte.
+# Ces propriétaires sont automatiquement ajoutés en reviewers sur toute PR.
+
+# ── Responsabilité globale ─────────────────────────────────────────────────
+*                               @mlops-team
+
+# ── Modèle ML et entraînement ─────────────────────────────────────────────
+training/                       @mlops-team/data-scientists
+pipelines/                      @mlops-team/data-scientists
+tests/ml/                       @mlops-team/data-scientists
+configs/model_config.yaml       @mlops-team/data-scientists
+
+# ── Feature Store Feast ────────────────────────────────────────────────────
+feast/                          @mlops-team/data-engineers
+data/feast/                     @mlops-team/data-engineers
+
+# ── API de serving ─────────────────────────────────────────────────────────
+serving/                        @mlops-team/backend
+tests/api/                      @mlops-team/backend
+
+# ── Infrastructure & DevOps ────────────────────────────────────────────────
+infrastructure/                 @mlops-team/devops
+.github/workflows/              @mlops-team/devops
+docker-compose.yaml             @mlops-team/devops
+pyproject.toml                  @mlops-team/devops
+
+# ── Orchestration Airflow ──────────────────────────────────────────────────
+airflow/                        @mlops-team/data-engineers @mlops-team/devops
+
+# ── Monitoring ────────────────────────────────────────────────────────────
+monitoring/                     @mlops-team/data-scientists @mlops-team/devops
+
+# ── Sécurité — revue obligatoire de l'équipe sécurité ─────────────────────
+.github/workflows/security.yml  @mlops-team/security
+infrastructure/kubernetes/      @mlops-team/security @mlops-team/devops

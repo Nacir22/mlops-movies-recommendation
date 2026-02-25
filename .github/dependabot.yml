@@ -1,0 +1,79 @@
+# .github/dependabot.yml
+# Configuration Dependabot — mises à jour automatiques des dépendances
+#
+# Vérifie chaque semaine :
+#   - Les dépendances Python (pyproject.toml / pip)
+#   - Les Actions GitHub utilisées dans les workflows
+#   - Les images Docker de base (Dockerfiles)
+
+version: 2
+
+updates:
+  # ── Dépendances Python ──────────────────────────────────────────────────
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: weekly
+      day:      monday
+      time:     "07:00"
+      timezone: Europe/Paris
+    open-pull-requests-limit: 5
+    reviewers:
+      - mlops-team/devops
+    labels:
+      - dependencies
+      - python
+    ignore:
+      # Pinnings stricts — mettre à jour manuellement après test ML
+      - dependency-name: scikit-learn
+        update-types: ["version-update:semver-major"]
+      - dependency-name: mlflow
+        update-types: ["version-update:semver-major"]
+    commit-message:
+      prefix: "deps(python)"
+
+  # ── Actions GitHub ──────────────────────────────────────────────────────
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day:      monday
+      time:     "07:30"
+      timezone: Europe/Paris
+    open-pull-requests-limit: 5
+    reviewers:
+      - mlops-team/devops
+    labels:
+      - dependencies
+      - github-actions
+    commit-message:
+      prefix: "deps(actions)"
+
+  # ── Images Docker ───────────────────────────────────────────────────────
+  - package-ecosystem: docker
+    directory: /infrastructure/docker/fastapi
+    schedule:
+      interval: weekly
+      day:      tuesday
+      time:     "07:00"
+      timezone: Europe/Paris
+    open-pull-requests-limit: 3
+    reviewers:
+      - mlops-team/devops
+    labels:
+      - dependencies
+      - docker
+    commit-message:
+      prefix: "deps(docker)"
+
+  - package-ecosystem: docker
+    directory: /infrastructure/docker/airflow
+    schedule:
+      interval: monthly
+    reviewers:
+      - mlops-team/devops
+    labels:
+      - dependencies
+      - docker
+    commit-message:
+      prefix: "deps(docker)"

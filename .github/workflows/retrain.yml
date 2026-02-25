@@ -1,0 +1,376 @@
+# .github/workflows/retrain.yml
+# Workflow de réentraînement automatique du modèle
+#
+# Déclenché par :
+#   - Cron : lundi 06h00 UTC (après la matérialisation Feast de 02h30)
+#   - Dispatch manuel avec paramètres personnalisables
+#   - Trigger depuis le DAG Airflow (via repository_dispatch)
+#
+# Pipeline :
+#   check-drift ──→ (si drift) train-model ──→ evaluate-model
+#                                                   ↓ (si accuracy ≥ seuil)
+#                                             register-mlflow ──→ build-new-image
+#                                                   ↓ (si échec)
+#                                             notify-failure
+
+name: Réentraînement Automatique
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"   # Lundi 06h00 UTC
+
+  workflow_dispatch:
+    inputs:
+      force_retrain:
+        description: "Forcer le réentraînement même sans drift"
+        required: false
+        default: "false"
+        type: boolean
+      min_accuracy:
+        description: "Seuil minimum d'accuracy"
+        required: false
+        default: "0.60"
+      gaussian_var_smoothing:
+        description: "Hyperparamètre gaussian_var_smoothing"
+        required: false
+        default: "1e-2"
+      bernoulli_alpha:
+        description: "Hyperparamètre bernoulli_alpha"
+        required: false
+        default: "1.0"
+
+  # Déclenché par le DAG Airflow (trigger_kubeflow_dag.py)
+  repository_dispatch:
+    types: [retrain-model]
+
+env:
+  PYTHON_VERSION: "3.10"
+  MIN_ACCURACY:   ${{ github.event.inputs.min_accuracy || '0.60' }}
+
+jobs:
+  # ── 1. Vérification du drift ─────────────────────────────────────────────
+  check-drift:
+    name: Vérifier le Drift
+    runs-on: ubuntu-22.04
+    outputs:
+      should-retrain: ${{ steps.drift.outputs.should_retrain }}
+      drift-score:    ${{ steps.drift.outputs.drift_score }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+
+      - name: Installer les dépendances
+        run: |
+          pip install \
+            scikit-learn==1.3.2 \
+            pandas==2.1.4 \
+            numpy==1.26.3 \
+            scipy==1.12.0 \
+            --quiet
+
+      - name: Analyser le drift
+        id: drift
+        run: |
+          python3 << 'PYEOF'
+          import sys, os, json
+          from pathlib import Path
+
+          sys.path.insert(0, '.')
+
+          # Forcer le réentraînement si demandé manuellement
+          force = os.getenv("INPUT_FORCE_RETRAIN", "false").lower() == "true"
+          if force:
+              print("🔄 Réentraînement forcé par l'utilisateur")
+              print("should_retrain=true")
+              with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+                  f.write("should_retrain=true\n")
+                  f.write("drift_score=forced\n")
+              sys.exit(0)
+
+          # Vérifier s'il existe un rapport de drift récent
+          reports = sorted(Path("monitoring/evidently/reports").glob("drift_report_*.json")) \
+                    if Path("monitoring/evidently/reports").exists() else []
+
+          if not reports:
+              # Pas de rapport = premier run → réentraîner par précaution
+              print("ℹ️  Aucun rapport de drift — réentraînement initial")
+              drift_score = -1.0
+              should_retrain = True
+          else:
+              with open(reports[-1]) as f:
+                  report = json.load(f)
+              drift_score = report.get("global_score", 0.0)
+              threshold   = float(os.getenv("DRIFT_THRESHOLD", "0.3"))
+              should_retrain = drift_score > threshold
+              print(f"Drift score : {drift_score:.4f} | Seuil : {threshold}")
+              print(f"Réentraînement : {'OUI' if should_retrain else 'NON'}")
+
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              f.write(f"should_retrain={'true' if should_retrain else 'false'}\n")
+              f.write(f"drift_score={drift_score}\n")
+          PYEOF
+        env:
+          INPUT_FORCE_RETRAIN: ${{ github.event.inputs.force_retrain || 'false' }}
+          DRIFT_THRESHOLD:     "0.3"
+
+      - name: Résumé drift
+        run: |
+          echo "## 📊 Analyse Drift" >> $GITHUB_STEP_SUMMARY
+          echo "- **Score** : \`${{ steps.drift.outputs.drift_score }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- **Réentraînement** : \`${{ steps.drift.outputs.should_retrain }}\`" >> $GITHUB_STEP_SUMMARY
+
+  # ── 2. Entraînement ──────────────────────────────────────────────────────
+  train-model:
+    name: Entraîner le Modèle
+    runs-on: ubuntu-22.04
+    needs: check-drift
+    if: needs.check-drift.outputs.should-retrain == 'true'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+
+      - name: Installer les dépendances
+        run: |
+          pip install \
+            scikit-learn==1.3.2 \
+            pandas==2.1.4 \
+            numpy==1.26.3 \
+            scipy==1.12.0 \
+            --quiet
+
+      - name: Exécuter le pipeline d'entraînement
+        run: |
+          python training/train.py \
+            --gaussian-var-smoothing ${{ github.event.inputs.gaussian_var_smoothing || '1e-2' }} \
+            --bernoulli-alpha        ${{ github.event.inputs.bernoulli_alpha || '1.0' }} \
+            --gaussian-weight        0.6 \
+            --bernoulli-weight       0.4 \
+            --min-accuracy           ${{ env.MIN_ACCURACY }} \
+            --experiment-name        "ci-retrain-${{ github.run_id }}"
+
+      - name: Uploader le modèle entraîné
+        uses: actions/upload-artifact@v4
+        with:
+          name: trained-model
+          path: models/naive_bayes_recommender.pkl
+          retention-days: 30
+
+  # ── 3. Évaluation ────────────────────────────────────────────────────────
+  evaluate-model:
+    name: Évaluer le Modèle
+    runs-on: ubuntu-22.04
+    needs: train-model
+    outputs:
+      accuracy:  ${{ steps.eval.outputs.accuracy }}
+      f1:        ${{ steps.eval.outputs.f1 }}
+      roc_auc:   ${{ steps.eval.outputs.roc_auc }}
+      promoted:  ${{ steps.eval.outputs.promoted }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+
+      - name: Installer les dépendances
+        run: |
+          pip install \
+            scikit-learn==1.3.2 \
+            pandas==2.1.4 \
+            numpy==1.26.3 \
+            scipy==1.12.0 \
+            pytest==7.4.4 \
+            --quiet
+
+      - name: Télécharger le modèle
+        uses: actions/download-artifact@v4
+        with:
+          name: trained-model
+          path: models/
+
+      - name: Évaluer et extraire les métriques
+        id: eval
+        run: |
+          python3 << 'PYEOF'
+          import sys, os, pickle, json
+          import pandas as pd
+          from pathlib import Path
+          from sklearn.metrics import accuracy_score, f1_score, roc_auc_score
+
+          sys.path.insert(0, '.')
+
+          with open("models/naive_bayes_recommender.pkl", "rb") as f:
+              bundle = pickle.load(f)
+
+          model     = bundle["model"]
+          feat_cols = bundle["feature_columns"]
+
+          X_test = pd.read_csv("data/processed/X_test.csv")
+          y_test = pd.read_csv("data/processed/y_test.csv").squeeze()
+
+          y_pred  = model.predict(X_test[feat_cols])
+          y_proba = model.predict_proba(X_test[feat_cols])
+
+          acc = round(float(accuracy_score(y_test, y_pred)), 4)
+          f1  = round(float(f1_score(y_test, y_pred, zero_division=0)), 4)
+          auc = round(float(roc_auc_score(y_test, y_proba[:,1])), 4)
+
+          min_acc = float(os.environ.get("MIN_ACCURACY", "0.60"))
+          promoted = acc >= min_acc
+
+          print(f"Accuracy  : {acc}")
+          print(f"F1        : {f1}")
+          print(f"ROC-AUC   : {auc}")
+          print(f"Promu     : {promoted} (seuil : {min_acc})")
+
+          with open(os.environ["GITHUB_OUTPUT"], "a") as out:
+              out.write(f"accuracy={acc}\n")
+              out.write(f"f1={f1}\n")
+              out.write(f"roc_auc={auc}\n")
+              out.write(f"promoted={'true' if promoted else 'false'}\n")
+
+          # Sauvegarder les métriques en JSON pour l'artifact
+          metrics = {"accuracy": acc, "f1": f1, "roc_auc": auc,
+                     "promoted": promoted, "run_id": os.environ.get("GITHUB_RUN_ID")}
+          with open("metrics.json", "w") as f:
+              json.dump(metrics, f, indent=2)
+          PYEOF
+        env:
+          MIN_ACCURACY: ${{ env.MIN_ACCURACY }}
+
+      - name: Uploader les métriques
+        uses: actions/upload-artifact@v4
+        with:
+          name: evaluation-metrics
+          path: metrics.json
+
+      - name: Résumé de l'évaluation
+        run: |
+          echo "## 📈 Métriques du nouveau modèle" >> $GITHUB_STEP_SUMMARY
+          echo "| Métrique | Valeur | Seuil |" >> $GITHUB_STEP_SUMMARY
+          echo "|---|---|---|" >> $GITHUB_STEP_SUMMARY
+          echo "| Accuracy  | \`${{ steps.eval.outputs.accuracy }}\` | ≥ ${{ env.MIN_ACCURACY }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| F1-score  | \`${{ steps.eval.outputs.f1 }}\` | ≥ 0.50 |" >> $GITHUB_STEP_SUMMARY
+          echo "| ROC-AUC   | \`${{ steps.eval.outputs.roc_auc }}\` | ≥ 0.52 |" >> $GITHUB_STEP_SUMMARY
+          echo "| Promu     | \`${{ steps.eval.outputs.promoted }}\` | — |" >> $GITHUB_STEP_SUMMARY
+
+  # ── 4. Enregistrement MLflow ─────────────────────────────────────────────
+  register-model:
+    name: Enregistrer dans MLflow
+    runs-on: ubuntu-22.04
+    needs: evaluate-model
+    if: needs.evaluate-model.outputs.promoted == 'true'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+
+      - name: Installer les dépendances
+        run: pip install mlflow==2.9.2 scikit-learn==1.3.2 --quiet
+
+      - name: Télécharger le modèle
+        uses: actions/download-artifact@v4
+        with:
+          name: trained-model
+          path: models/
+
+      - name: Enregistrer dans MLflow Registry
+        env:
+          MLFLOW_TRACKING_URI: ${{ secrets.MLFLOW_TRACKING_URI }}
+        run: |
+          python3 << 'PYEOF'
+          import sys, pickle, os
+          import mlflow, mlflow.sklearn
+
+          sys.path.insert(0, '.')
+
+          tracking_uri = os.environ.get("MLFLOW_TRACKING_URI", "")
+          if not tracking_uri:
+              print("ℹ️  MLFLOW_TRACKING_URI non défini — skip enregistrement MLflow")
+              sys.exit(0)
+
+          mlflow.set_tracking_uri(tracking_uri)
+          mlflow.set_experiment("movielens-ci-retrain")
+
+          with open("models/naive_bayes_recommender.pkl", "rb") as f:
+              bundle = pickle.load(f)
+
+          with mlflow.start_run(run_name=f"ci-retrain-${{ github.run_id }}"):
+              mlflow.log_params(bundle.get("params", {}))
+              mlflow.log_metrics(bundle.get("metrics", {}))
+              mlflow.log_param("git_sha",  "${{ github.sha }}")
+              mlflow.log_param("git_ref",  "${{ github.ref }}")
+
+              mlflow.sklearn.log_model(
+                  bundle["model"],
+                  artifact_path="model",
+                  registered_model_name="naive-bayes-recommender",
+              )
+
+          print("✅ Modèle enregistré dans MLflow Registry")
+          PYEOF
+
+  # ── 5. Déclenchement du CD ───────────────────────────────────────────────
+  trigger-cd:
+    name: Déclencher le CD
+    runs-on: ubuntu-22.04
+    needs: [evaluate-model, register-model]
+    if: needs.evaluate-model.outputs.promoted == 'true'
+
+    steps:
+      - name: Déclencher le workflow CD
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner:       context.repo.owner,
+              repo:        context.repo.repo,
+              workflow_id: "cd.yml",
+              ref:         "main",
+              inputs: {
+                environment:   "staging",
+                force_rebuild: "true",
+              }
+            });
+            console.log("✅ Workflow CD déclenché");
+
+  # ── 6. Notification d'échec ──────────────────────────────────────────────
+  notify-failure:
+    name: Notifier en cas d'échec
+    runs-on: ubuntu-22.04
+    needs: [train-model, evaluate-model]
+    if: failure()
+
+    steps:
+      - name: Notifier Slack
+        uses: slackapi/slack-github-action@v1.26.0
+        with:
+          payload: |
+            {
+              "text": "❌ *Réentraînement échoué*",
+              "blocks": [{
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "❌ *Réentraînement automatique échoué*\n*Drift score* : `${{ needs.check-drift.outputs.drift-score }}`\n*Run* : ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                }
+              }]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
